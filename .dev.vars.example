@@ -1,0 +1,2 @@
+# Copy to .dev.vars for `npm run preview` (local Cloudflare Workers runtime).
+RESEND_API_KEY=re_xxxxxxxxxxxxxxxxxxxxxxxx

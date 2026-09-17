@@ -1,26 +1,101 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@theme {
+  /* Palette matched to the template: warm off-white, brown-black, orange accent. */
+  --color-charcoal: #3b342d;
+  --color-ink: #251f19;
+  --color-bronze: #f48d16;
+  --color-bronze-deep: #b25400;
+  --color-cream: #f7f7f4;
+  --color-sand: #eeede6;
+  --color-stone: #68615a;
+  --color-line: #e4e0dd;
+
+  --font-heading: var(--font-montserrat), "Montserrat", system-ui, sans-serif;
+  --font-serif: var(--font-cormorant), "Cormorant Garamond", Georgia, serif;
+  --font-body: var(--font-montserrat), "Montserrat", system-ui, sans-serif;
+
+  --radius-card: 1.25rem;
+  --radius-btn: 0.7rem;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--color-cream);
+  color: var(--color-ink);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-heading);
+  font-weight: 500;
+  line-height: 1.08;
+  letter-spacing: -0.025em;
+}
+
+/* Italic accent inside headings, like the template's "with you" */
+h1 em,
+h2 em,
+h3 em,
+.accent {
+  font-style: italic;
+  font-weight: 400;
+  color: var(--color-stone);
+}
+.on-dark h1 em,
+.on-dark h2 em,
+.on-dark .accent {
+  color: rgba(255, 255, 255, 0.72);
+}
+
+::selection {
+  background: var(--color-bronze);
+  color: #ffffff;
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-bronze);
+  outline-offset: 3px;
+}
+
+/* Scroll reveal. Hidden only when JS is running (html.js). */
+.js .reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition:
+    opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.js .reveal.revealed {
+  opacity: 1;
+  transform: none;
+}
+
+/* FAQ plus icon rotates when open */
+details[open] .faq-icon {
+  transform: rotate(45deg);
+}
+details > summary {
+  list-style: none;
+}
+details > summary::-webkit-details-marker {
+  display: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .js .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
 }

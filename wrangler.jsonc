@@ -1,0 +1,22 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "six33",
+  "main": ".open-next/worker.js",
+  "compatibility_date": "2025-09-01",
+  "compatibility_flags": ["nodejs_compat", "global_fetch_strictly_public"],
+  "assets": {
+    "directory": ".open-next/assets",
+    "binding": "ASSETS"
+  },
+  "observability": {
+    "enabled": true
+  },
+  // Public (non-secret) variables. Secrets like RESEND_API_KEY are set in the
+  // Cloudflare dashboard or with `npx wrangler secret put RESEND_API_KEY`.
+  "vars": {
+    "NEXT_PUBLIC_SITE_URL": "https://www.six33consulting.com",
+    "NEXT_PUBLIC_BOOKING_URL": "https://cal.com/your-username/free-call",
+    "CONTACT_TO_EMAIL": "john@example.com",
+    "CONTACT_FROM_EMAIL": "Six33 Website <onboarding@resend.dev>"
+  }
+}

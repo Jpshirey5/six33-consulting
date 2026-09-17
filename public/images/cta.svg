@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 700" width="1600" height="700" role="img" aria-label="Placeholder image">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="0.3" y2="1"><stop offset="0" stop-color="#F2B279"/><stop offset="0.45" stop-color="#D97A2C"/><stop offset="1" stop-color="#5A3A24"/></linearGradient>
+    <radialGradient id="r1" cx="25%" cy="85%" r="60%"><stop offset="0" stop-color="#F48D16" stop-opacity="0.75"/><stop offset="1" stop-color="#F48D16" stop-opacity="0"/></radialGradient>
+    <radialGradient id="r2" cx="80%" cy="15%" r="55%"><stop offset="0" stop-color="#FFE3BF" stop-opacity="0.55"/><stop offset="1" stop-color="#FFE3BF" stop-opacity="0"/></radialGradient>
+    <filter id="blur"><feGaussianBlur stdDeviation="45"/></filter>
+  </defs>
+  <rect width="1600" height="700" fill="url(#g)"/>
+  <ellipse cx="560" cy="489" rx="640" ry="196" fill="#C96A1C" opacity="0.7" filter="url(#blur)"/>
+  <ellipse cx="1120" cy="244" rx="480" ry="154" fill="#F2B279" opacity="0.5" filter="url(#blur)"/>
+  <ellipse cx="800" cy="700" rx="960" ry="140" fill="#7A4A26" opacity="0.8" filter="url(#blur)"/>
+  <rect width="1600" height="700" fill="url(#r1)"/>
+  <rect width="1600" height="700" fill="url(#r2)"/>
+  <text x="1576" y="680" text-anchor="end" font-family="Helvetica, Arial, sans-serif" font-size="14" letter-spacing="2" fill="#FFFFFF" opacity="0.5">CTA IMAGE</text>
+</svg>
