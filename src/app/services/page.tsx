@@ -28,7 +28,7 @@ export default function ServicesPage() {
             <em>No surprises.</em>
           </>
         }
-        text="Every engagement is virtual unless noted, and every one begins with an honest look at faith, family, and work. Investment is discussed on your free call, so you can choose the right fit without guessing."
+        text="Every engagement is virtual unless noted, and every one begins with an honest look at faith, family, and ministry. Investment is discussed on your free call, so you can choose the right fit without guessing."
       />
       <section aria-label="Services" className="py-8">
         <Container>

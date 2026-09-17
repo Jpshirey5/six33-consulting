@@ -4,7 +4,7 @@ export const site = {
   legalName: "Six33 Consulting",
   tagline: "Seek first. Lead well. Build what lasts.",
   description:
-    "Faith-based leadership and life consulting for ministry pastors and worship pastors. Put faith first, family second, and work third, and serve for the long haul.",
+    "Faith-based leadership and life consulting for ministry pastors and worship pastors. Put faith first, family second, and ministry third, and serve for the long haul.",
   url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.six33consulting.com",
   // Placeholder. Swap for the real address when the domain is set up.
   email: "john@[yourdomain].com",
@@ -38,7 +38,7 @@ export const navLinks = [
 export const faqs = [
   {
     q: "Is this counseling, coaching, or consulting?",
-    a: "Consulting with a coaching feel. We are not licensed counselors, and we will say so if what you need is a counselor. What we do is help you look honestly at faith, family, and work, then build the rhythms, boundaries, and shared load that put them back in order.",
+    a: "Consulting with a coaching feel. We are not licensed counselors, and we will say so if what you need is a counselor. What we do is help you look honestly at faith, family, and ministry, then build the rhythms, boundaries, and shared load that put them back in order.",
   },
   {
     q: "Do I have to be a worship pastor?",

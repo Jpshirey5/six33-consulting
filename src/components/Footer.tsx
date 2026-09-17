@@ -1,12 +1,13 @@
 import Link from "next/link";
 import Container from "./Container";
 import Logo from "./Logo";
+import LogoMark from "./LogoMark";
 import PixelArt from "./PixelArt";
 import { navLinks, site } from "@/lib/site";
 
 const columns = [
   { title: "Explore", links: navLinks.slice(0, 3) },
-  { title: "Work together", links: [navLinks[3], navLinks[4], { href: "/contact#book", label: "Book a free call" }] },
+  { title: "Get started", links: [navLinks[3], navLinks[4], { href: "/contact#book", label: "Book a free call" }] },
   { title: "Legal", links: [{ href: "/privacy", label: "Privacy policy" }] },
 ];
 
@@ -63,7 +64,8 @@ export default function Footer() {
           >
             six33
           </p>
-          <PixelArt seed={7} count={24} className="absolute right-0 top-4 h-24 w-48 sm:h-32 sm:w-64" />
+          <LogoMark className="absolute bottom-6 right-4 h-16 w-16 opacity-90 sm:bottom-8 sm:h-24 sm:w-24" />
+          <PixelArt seed={7} count={24} className="absolute right-28 top-4 hidden h-24 w-48 sm:block sm:h-32 sm:w-64 lg:right-40" />
         </div>
 
         <div className="flex flex-col gap-2 border-t border-line py-5 text-xs text-stone sm:flex-row sm:items-center sm:justify-between">

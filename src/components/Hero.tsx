@@ -21,7 +21,7 @@ export default function Hero() {
             </h1>
             <p className="mt-6 max-w-xl text-sm leading-relaxed text-white/85 sm:text-base">
               Faith-based leadership and life consulting for ministry pastors and worship pastors. Put faith
-              first, family second, and work third, so you can serve for the long haul.
+              first, family second, and ministry third, so you can serve for the long haul.
             </p>
             <div className="mt-8">
               <LinkButton href="/contact#book">Book a Free Call</LinkButton>

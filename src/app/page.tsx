@@ -43,7 +43,7 @@ export default function HomePage() {
                 <em>No surprises.</em>
               </>
             }
-            text="Every engagement is virtual unless noted, and every one begins with an honest look at faith, family, and work. Investment is discussed on your free call."
+            text="Every engagement is virtual unless noted, and every one begins with an honest look at faith, family, and ministry. Investment is discussed on your free call."
           />
           <div className="mt-12 grid gap-4 lg:grid-cols-3">
             {featured.map((service, i) => (

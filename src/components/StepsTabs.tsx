@@ -8,7 +8,7 @@ import Reveal from "./Reveal";
 export const steps = [
   {
     name: "Assess",
-    text: "An honest look at where faith, family, and work actually sit right now, not where you wish they did.",
+    text: "An honest look at where faith, family, and ministry actually sit right now, not where you wish they did.",
   },
   {
     name: "Align",
@@ -25,19 +25,19 @@ export const steps = [
 ];
 
 const week = [
-  { day: "Mon", blocks: ["faith", "work", "family"] },
-  { day: "Tue", blocks: ["faith", "work", "family"] },
-  { day: "Wed", blocks: ["faith", "work", "work"] },
-  { day: "Thu", blocks: ["faith", "work", "family"] },
+  { day: "Mon", blocks: ["faith", "ministry", "family"] },
+  { day: "Tue", blocks: ["faith", "ministry", "family"] },
+  { day: "Wed", blocks: ["faith", "ministry", "ministry"] },
+  { day: "Thu", blocks: ["faith", "ministry", "family"] },
   { day: "Fri", blocks: ["faith", "rest", "family"] },
   { day: "Sat", blocks: ["faith", "family", "family"] },
-  { day: "Sun", blocks: ["faith", "work", "rest"] },
+  { day: "Sun", blocks: ["faith", "ministry", "rest"] },
 ];
 
 const blockStyle: Record<string, string> = {
   faith: "bg-bronze/80",
   family: "bg-bronze/35",
-  work: "bg-ink/70",
+  ministry: "bg-ink/70",
   rest: "bg-line",
 };
 
@@ -104,7 +104,7 @@ export default function StepsTabs() {
                   <p className="mt-1 text-lg font-medium text-ink">Step {active + 1}: {steps[active].name}</p>
                 </div>
                 <ul className="hidden gap-3 text-[11px] text-stone sm:flex">
-                  {["faith", "family", "work", "rest"].map((k) => (
+                  {["faith", "family", "ministry", "rest"].map((k) => (
                     <li key={k} className="flex items-center gap-1.5">
                       <span aria-hidden="true" className={`h-2.5 w-2.5 rounded-sm ${blockStyle[k]}`} />
                       {k}

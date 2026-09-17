@@ -1,5 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
-  <!-- Placeholder favicon. Replace with the real mark. -->
   <rect width="64" height="64" rx="14" fill="#251F19"/>
-  <text x="32" y="43" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="28" font-weight="700" fill="#F7F7F4">6<tspan fill="#F48D16">33</tspan></text>
+  <path d="M18 42 L32 25 L46 42" fill="none" stroke="#F7F7F4" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="25" y="9" width="14" height="14" rx="3.5" fill="#F48D16"/>
 </svg>

@@ -13,7 +13,7 @@ import { site } from "@/lib/site";
 export const metadata: Metadata = {
   title: "The Six33 Framework",
   description:
-    "Three pillars and four steps for ministry leaders: faith rooted before busy, family present not leftover, and work that is fruitful and faithful.",
+    "Three pillars and four steps for ministry leaders: faith rooted before busy, family present not leftover, and ministry that is fruitful and faithful.",
   alternates: { canonical: "/framework" },
   openGraph: { title: `The Six33 Framework | ${site.name}`, url: "/framework" },
 };
@@ -35,9 +35,9 @@ const pillars = [
   },
   {
     number: "03.",
-    name: "Work",
+    name: "Ministry",
     title: "Fruitful and Faithful",
-    text: "A healthy pace, a shared load, and leaders raised up around you, so you can serve for the long haul without ministry taking over your home. Work flows from faith and family, not the other way around.",
+    text: "A healthy pace, a shared load, and leaders raised up around you, so you can serve for the long haul without ministry taking over your home. Ministry flows from faith and family, not the other way around.",
     points: ["A pace you can keep through busy seasons", "Delegation and raising up other leaders", "Serving faithfully for the long haul"],
   },
 ];
@@ -51,7 +51,7 @@ export default function FrameworkPage() {
           <>
             Faith first. Family second.
             <br />
-            <em>Work third.</em>
+            <em>Ministry third.</em>
           </>
         }
         text="Three pillars, always in the same order, and four steps to get there. Everything we build starts here."
@@ -70,7 +70,7 @@ export default function FrameworkPage() {
                 <em>three pillars.</em>
               </>
             }
-            text="Faith stays first, family stays close, and work finds its healthy place behind both."
+            text="Faith stays first, family stays close, and ministry finds its healthy place behind both."
           />
           <ol className="mt-12 grid gap-4 lg:grid-cols-3">
             {pillars.map((p, i) => (

@@ -9,9 +9,8 @@ const cards = [
     number: "02.",
     title: "Family second",
     text: "Protected family time, clear boundaries, and family rhythms your home can count on. Your spouse and kids get the best of you, not what is left.",
-    highlight: true,
   },
-  { number: "03.", title: "Work third", text: "A healthy pace, a shared load, and leaders raised up around you, so ministry stops running on you alone." },
+  { number: "03.", title: "Ministry third", text: "A healthy pace, a shared load, and leaders raised up around you, so ministry stops running on you alone." },
   { number: "04.", title: "For the long haul", text: "A plan for busy seasons so the new order holds when Easter, Christmas, and everything else arrives." },
 ];
 
@@ -38,28 +37,12 @@ export default function Pillars() {
               as="li"
               key={card.number}
               delay={i * 80}
-              className={`flex min-h-[320px] flex-col justify-between rounded-card p-6 ${
-                card.highlight ? "bg-white shadow-[0_1px_0_#e4e0dd]" : "bg-sand"
-              }`}
+              className="flex min-h-[320px] flex-col justify-between rounded-card bg-white p-6 shadow-[0_1px_0_#e4e0dd]"
             >
-              {card.highlight ? (
-                <div className="rounded-xl bg-cream p-4">
-                  <p className="text-[11px] font-semibold uppercase tracking-wider text-stone">This week</p>
-                  <ul className="mt-3 space-y-2 text-xs text-ink">
-                    {["Morning with God, before email", "Tuesday night is family night", "Saturday rehearsal ends by noon", "Sunday afternoon: rest"].map((item) => (
-                      <li key={item} className="flex items-center gap-2">
-                        <span aria-hidden="true" className="h-1.5 w-1.5 rounded-full bg-bronze" />
-                        {item}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              ) : (
-                <div>
-                  <p className="font-heading text-4xl font-medium text-ink/30 lining-nums">{card.number}</p>
-                  <PixelArt seed={i + 3} className="mt-6 h-20 w-36" />
-                </div>
-              )}
+              <div>
+                <p className="font-heading text-4xl font-medium text-ink/30 lining-nums">{card.number}</p>
+                <PixelArt seed={i + 3} className="mt-6 h-20 w-36" />
+              </div>
               <div>
                 <h3 className="text-xl font-medium text-ink">{card.title}</h3>
                 <p className="mt-2 text-sm leading-relaxed text-stone">{card.text}</p>

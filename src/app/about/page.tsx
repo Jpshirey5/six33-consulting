@@ -12,7 +12,7 @@ import { site } from "@/lib/site";
 export const metadata: Metadata = {
   title: "About",
   description:
-    "Meet John Shirey, founder of Six33 Consulting, and learn why the business exists: to help ministry leaders put faith first, family second, and work third.",
+    "Meet John Shirey, founder of Six33 Consulting, and learn why the business exists: to help ministry leaders put faith first, family second, and ministry third.",
   alternates: { canonical: "/about" },
   openGraph: { title: `About | ${site.name}`, url: "/about" },
 };
@@ -99,7 +99,7 @@ export default function AboutPage() {
                 <em>Matthew 6:33.</em>
               </>
             }
-            text="Seek first the kingdom of God, and all these things will be provided. Faith first, family second, work third. That order is easy to say and hard to keep."
+            text="Seek first the kingdom of God, and all these things will be provided. Faith first, family second, ministry third. That order is easy to say and hard to keep."
           />
           <div className="mt-12 grid gap-4 lg:grid-cols-3">
             {[
@@ -108,12 +108,12 @@ export default function AboutPage() {
                 text: "Most ministry leaders did not get out of order on purpose. The week filled up. Someone needed them. The pace crept higher, and the people at home learned to expect the tired version.",
               },
               {
-                title: "Even worship becomes work",
+                title: "Even worship becomes a job",
                 text: "Over time, personal worship starts to feel like part of the job. Prayer becomes prep. Sunday becomes a production. The altar gets crowded out by the calendar.",
               },
               {
                 title: "It can be put back",
-                text: "Six33 exists to help leaders get faith, family, and work back in the right order, and to build the rhythms, boundaries, and shared load that keep it there.",
+                text: "Six33 exists to help leaders get faith, family, and ministry back in the right order, and to build the rhythms, boundaries, and shared load that keep it there.",
               },
             ].map((card, i) => (
               <Reveal as="div" key={card.title} delay={i * 80} className="rounded-card bg-white p-7">

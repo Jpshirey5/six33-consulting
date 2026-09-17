@@ -59,14 +59,14 @@ To deploy manually from your machine instead, run `npx wrangler login` once, the
 
 - `src/lib/site.ts`: business name, tagline, verse, email, booking URL, social links, nav links, and the FAQ list.
 - `src/lib/services.ts`: the six offers. Pricing is intentionally left off the site and discussed on the free call.
-- `src/components/Logo.tsx`: temporary text logo. Swap the inner markup for your SVG when it is ready. The faded wordmark in `Footer.tsx` is plain text.
+- `src/components/Logo.tsx` and `LogoMark.tsx`: the logo lockup and the seek-first chevron mark. Standalone copies live at `public/logo.svg` and `public/logo-mark.svg`. The faded wordmark in `Footer.tsx` is plain text.
 - `src/components/Testimonials.tsx`: hidden. Set `SHOW_TESTIMONIALS` to `true` and fill in the list to turn it on.
 - `src/components/Reveal.tsx`: the scroll-in effect. Respects `prefers-reduced-motion`.
 - `src/components/StepsTabs.tsx` and `AudienceTabs.tsx`: the interactive tab sections on the Home page.
 - `src/components/BookingEmbed.tsx`: Cal.com or Calendly iframe, driven by `NEXT_PUBLIC_BOOKING_URL`.
 - `src/app/api/contact/route.ts`: contact form handler that sends email through Resend.
 - `src/app/globals.css`: colors, fonts, and the reveal animation. Italic accents inside headings use `<em>`.
-- `src/app/icon.svg`: placeholder favicon. Replace with the real mark.
+- `src/app/icon.svg`: favicon built from the mark.
 - `src/app/opengraph-image.tsx`: generated Open Graph image.
 - `public/images/john-shirey.jpg`: founder headshot, used on the About page. Add this file.
 - `public/images/*.svg`: placeholder backgrounds for the hero, closing call to action, contact form, audience block, and highlighted service card. Replace each with a real photo of the same name, or update the `src` in the component.
@@ -79,6 +79,5 @@ To deploy manually from your machine instead, run `npx wrangler login` once, the
 - [ ] Set the real email in `src/lib/site.ts` and `CONTACT_TO_EMAIL`
 - [ ] Set the real booking URL in `NEXT_PUBLIC_BOOKING_URL`
 - [ ] Verify your sending domain in Resend and update `CONTACT_FROM_EMAIL`
-- [ ] Replace the placeholder favicon and, later, the text logo
 - [ ] Finalize the privacy policy wording in `src/app/privacy/page.tsx`
 - [ ] Set `NEXT_PUBLIC_SITE_URL` to the live domain

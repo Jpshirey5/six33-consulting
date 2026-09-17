@@ -15,8 +15,8 @@ export const services: Service[] = [
     name: "Balance Blueprint Session",
     format: "90-minute virtual session",
     summary:
-      "A focused starting point. We look honestly at faith, family, and work, name what matters most right now, and leave with a clear plan for the next 30 days.",
-    includes: ["Faith, Family, and Work assessment", "Your top three priorities", "A 30-day reset plan"],
+      "A focused starting point. We look honestly at faith, family, and ministry, name what matters most right now, and leave with a clear plan for the next 30 days.",
+    includes: ["Faith, Family, and Ministry assessment", "Your top three priorities", "A 30-day reset plan"],
   },
   {
     slug: "seek-first-reset",
@@ -31,7 +31,7 @@ export const services: Service[] = [
     name: "Kingdom Builder Intensive",
     format: "8 weeks",
     summary:
-      "Everything in the Reset, plus the work of sharing the load. We build a healthy pace that holds up through the busiest seasons of the church year.",
+      "Everything in the Reset, plus the practice of sharing the load. We build a healthy pace that holds up through the busiest seasons of the church year.",
     includes: [
       "Everything in the Seek First Reset",
       "Delegation and raising up leaders",
