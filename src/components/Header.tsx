@@ -5,7 +5,8 @@ import { usePathname } from "next/navigation";
 import { useEffect, useId, useRef, useState } from "react";
 import Logo from "./Logo";
 import { LinkButton } from "./Button";
-import { navLinks } from "@/lib/site";
+import { navLinks, site } from "@/lib/site";
+import { bookingLabel } from "@/lib/services";
 
 export default function Header() {
   const [open, setOpen] = useState(false);
@@ -53,7 +54,9 @@ export default function Header() {
               ))}
             </ul>
           </nav>
-          <LinkButton href="/contact#book">Book a Consultation</LinkButton>
+          <LinkButton href={site.bookingUrl} target="_blank" rel="noopener noreferrer">
+            {bookingLabel}
+          </LinkButton>
         </div>
 
         <button
@@ -96,8 +99,14 @@ export default function Header() {
             </li>
           ))}
           <li className="pb-3 pt-3">
-            <LinkButton href="/contact#book" className="w-full justify-start" onClick={() => setOpen(false)}>
-              Book a Consultation
+            <LinkButton
+              href={site.bookingUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-full justify-start"
+              onClick={() => setOpen(false)}
+            >
+              {bookingLabel}
             </LinkButton>
           </li>
         </ul>

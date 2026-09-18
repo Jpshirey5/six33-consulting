@@ -2,9 +2,8 @@ import Image from "next/image";
 import Container from "./Container";
 import Reveal from "./Reveal";
 import { LinkButton } from "./Button";
+import BookingCta from "./BookingCta";
 import { heroHeadlines } from "@/lib/site";
-
-const audiences = ["Worship Leaders", "Lead Pastors", "Ministry Directors", "Production Leaders", "Church Staff"];
 
 // Swap this index to use one of the other headline options in src/lib/site.ts.
 const headline = heroHeadlines[0];
@@ -32,27 +31,14 @@ export default function Hero() {
               Consulting for church and ministry leaders, so the ministry stops running on one person holding
               everything together.
             </p>
-            <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
-              <LinkButton href="/contact#book" variant="light">
-                Book a Consultation
-              </LinkButton>
+            <BookingCta variant="light" tone="light" className="mt-8">
               <LinkButton href="/services" variant="ghost">
                 Explore Services
               </LinkButton>
-            </div>
+            </BookingCta>
           </div>
         </Reveal>
 
-        <Reveal delay={150} className="py-10 text-center">
-          <p className="text-sm text-stone">Built for the leaders carrying the most</p>
-          <ul className="mt-5 flex flex-wrap items-center justify-center gap-x-10 gap-y-3">
-            {audiences.map((a) => (
-              <li key={a} className="font-heading text-lg font-semibold tracking-tight text-ink/60">
-                {a}
-              </li>
-            ))}
-          </ul>
-        </Reveal>
       </Container>
     </section>
   );

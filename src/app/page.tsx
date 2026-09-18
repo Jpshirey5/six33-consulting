@@ -12,12 +12,11 @@ import AudienceTabs from "@/components/AudienceTabs";
 import Faq from "@/components/Faq";
 import VerseBlock from "@/components/VerseBlock";
 import FinalCta from "@/components/FinalCta";
-import ServiceCard from "@/components/ServiceCard";
+import EngagementCard from "@/components/EngagementCard";
 import SectionHead from "@/components/SectionHead";
 import Section, { type Background } from "@/components/Section";
 import PullQuote from "@/components/PullQuote";
-import Reveal from "@/components/Reveal";
-import { engagements } from "@/lib/services";
+import { engagements, packetNote } from "@/lib/services";
 import { site } from "@/lib/site";
 
 export const metadata: Metadata = {
@@ -25,8 +24,6 @@ export const metadata: Metadata = {
   description: site.description,
   alternates: { canonical: "/" },
 };
-
-const featured = engagements.slice(0, 3);
 
 type Slot = {
   key: string;
@@ -73,27 +70,25 @@ function ServicesSection({ background }: { background: Background }) {
     <Section background={background} labelledBy="services-heading">
       <SectionHead
         id="services-heading"
-        eyebrow="Ways to work together"
+        eyebrow="Ways we work together"
         title={
           <>
-            Start small.
+            Three engagements.
             <br />
-            <em>Go as deep as it needs.</em>
+            <em>We pick the fit together.</em>
           </>
         }
-        text="One session for one problem, four weeks to reset a ministry, or an ongoing relationship. Every engagement is virtual unless noted, and investment is discussed on the intro call."
+        text="Which one makes sense depends on what you are carrying. That is what the discovery call is for."
       />
-      <div className="mt-12 grid gap-4 lg:grid-cols-3">
-        {featured.map((service, i) => (
-          <Reveal key={service.slug} delay={i * 80}>
-            <ServiceCard service={service} highlight={i === 1} />
-          </Reveal>
+      <ul className="mx-auto mt-10 grid max-w-3xl gap-3">
+        {engagements.map((engagement) => (
+          <EngagementCard key={engagement.slug} engagement={engagement} />
         ))}
-      </div>
+      </ul>
+      <p className="mx-auto mt-6 max-w-3xl text-center text-sm font-medium text-ink">{packetNote}</p>
       <p className="mt-6 text-center text-sm text-stone">
-        Churches needing one specific system built or rebuilt can also scope a custom project.{" "}
         <Link href="/services" className="font-medium text-bronze-deep underline-offset-4 hover:underline">
-          See all services
+          See what we work on
         </Link>
       </p>
     </Section>

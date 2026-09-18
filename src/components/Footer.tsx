@@ -6,7 +6,7 @@ import { navLinks, site } from "@/lib/site";
 
 const columns = [
   { title: "Explore", links: navLinks.slice(0, 3) },
-  { title: "Get started", links: [navLinks[3], navLinks[4], { href: "/contact#book", label: "Book a consultation" }] },
+  { title: "Get started", links: [navLinks[3], navLinks[4], { href: site.bookingUrl, label: "Book a discovery call" }] },
   { title: "Legal", links: [{ href: "/privacy", label: "Privacy policy" }] },
 ];
 

@@ -1,6 +1,7 @@
 import Reveal from "./Reveal";
 import Section, { type Background } from "./Section";
 import { LinkButton } from "./Button";
+import BookingCta from "./BookingCta";
 
 /**
  * Closing call to action. Flat ink, edge to edge: no image or gradient, so the
@@ -19,14 +20,11 @@ export default function FinalCta({ background = "ink" }: { background?: Backgrou
           Tell us what you are carrying and where it is breaking down. If Six33 is a fit, we will tell you
           exactly what working together would look like. If it is not, we will tell you that too.
         </p>
-        <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
-          <LinkButton href="/contact#book" variant="light">
-            Book a Consultation
-          </LinkButton>
+        <BookingCta variant="light" tone="light" className="mt-8">
           <LinkButton href="/services" variant="ghost">
             Explore Services
           </LinkButton>
-        </div>
+        </BookingCta>
       </Reveal>
     </Section>
   );

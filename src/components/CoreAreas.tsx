@@ -5,13 +5,13 @@ import Reveal from "./Reveal";
 import SectionHead from "./SectionHead";
 import { coreAreas } from "@/lib/services";
 
-/** The three consulting areas, linked to their detail sections on /services. */
+/** The two consulting areas, linked to their detail sections on /services. */
 export default function CoreAreas({ background = "cream" }: { background?: Background }) {
   return (
     <Section background={background} labelledBy="areas-heading">
       <SectionHead
         id="areas-heading"
-        eyebrow="Three areas"
+        eyebrow="Two areas"
         title={
           <>
             Where we work,
@@ -19,15 +19,15 @@ export default function CoreAreas({ background = "cream" }: { background?: Backg
             <em>and what changes.</em>
           </>
         }
-        text="Leadership, production, and ministry systems. Most leaders start in one and find the others were part of the same problem."
+        text="Worship leadership and worship production. Most leaders start in one and find the other was part of the same problem."
       />
-      <ul className="mt-12 grid gap-4 lg:grid-cols-3">
+      <ul className="mt-12 grid gap-4 md:grid-cols-2">
         {coreAreas.map((area, i) => (
           <Reveal
             as="li"
             key={area.slug}
             delay={i * 80}
-            className={`flex flex-col rounded-card p-7 sm:p-8 ${i === 1 ? "bg-white" : "bg-sand"}`}
+            className="flex flex-col rounded-card bg-white p-7 shadow-[0_1px_0_#e4e0dd] sm:p-8"
           >
             <div className="flex items-start justify-between gap-4">
               <p className="font-heading text-4xl font-medium text-ink/30 lining-nums">0{i + 1}.</p>

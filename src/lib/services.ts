@@ -8,7 +8,7 @@ export type CoreArea = {
   outcome: string;
 };
 
-/** The three consulting areas. Everything Six33 does lives under one of these. */
+/** The two consulting areas. Everything Six33 does lives under one of these. */
 export const coreAreas: CoreArea[] = [
   {
     slug: "worship-leadership-coaching",
@@ -48,103 +48,99 @@ export const coreAreas: CoreArea[] = [
     ],
     outcome: "A weekend that runs the same way whether or not you are in the building.",
   },
-  {
-    slug: "ministry-church-systems",
-    name: "Ministry Leader + Church Systems",
-    short: "Get what is in your head into a system that actually works.",
-    headline: "The ministry should not live in one person's memory.",
-    summary:
-      "Broader consulting for pastors, ministry directors, and church staff. We take the responsibilities, decisions, and details you are personally holding and give them a place to live outside of you.",
-    focus: [
-      "Ministry workflows and repeatable processes",
-      "Team structure, ownership, and delegation",
-      "Communication and meeting rhythms",
-      "Process documentation and task management",
-      "Digital organization and file structure",
-      "Automation and AI implementation",
-      "Ministry planning and accountability",
-      "Healthy boundaries and leadership rhythms",
-    ],
-    outcome: "Enough order that productivity serves the calling instead of consuming the person.",
-  },
 ];
+
+/**
+ * The offer structure. No pricing anywhere on the site.
+ * Every path leads to booking the One-Time Focused Consultation, which is the
+ * entry point for everything else, not one of the options alongside them.
+ */
+
+export const bookingLabel = "Book a discovery call";
+
+/** The one line that sits under every primary button. */
+export const bookingSubline =
+  "Book a Discovery Call. Tell me what you are carrying, and I will tell you whether Six33 can help.";
+
+export const consultation = {
+  label: "Start here",
+  name: "One-Time Focused Consultation",
+  format: "Virtual Session (90 Minutes)",
+  summary:
+    "Bring the thing that is most stuck. We work through what is actually causing it and what to do about it. Every engagement starts here.",
+};
 
 export type Engagement = {
   slug: string;
   name: string;
+  /** One short line. This is all the site shows. */
+  brief: string;
   format: string;
+  /** Packet only. Not shown on the site. */
+  forWhom: string;
+  /** Packet only. Not shown on the site. */
   summary: string;
-  includes: string[];
-  note?: string;
-  audience?: string;
+  /** Packet only. Not shown on the site. */
+  outcomes: string[];
 };
 
-/** The service ladder. Four options, in order of depth.
- *  Pricing is intentionally kept off the website and discussed on the intro call. */
+/** The three engagements that can follow the first consultation, in order. */
 export const engagements: Engagement[] = [
   {
-    slug: "consultation",
-    name: "Consultation",
-    format: "One focused working session",
+    slug: "ministry-reset",
+    name: "The Ministry Reset",
+    brief: "A four week engagement",
+    format: "4-Week Engagement | One Session Per Week",
+    forWhom: "Leaders ready to move from overwhelmed and reactive to clear and organized.",
     summary:
-      "One problem, one session. Bring the thing that is stuck and we will work on it together until you have a clear next step you can act on this week.",
-    includes: [
-      "A leadership, team, or volunteer problem",
-      "A ProPresenter or Sunday workflow problem",
-      "A ministry systems or planning problem",
-      "An automation or AI opportunity",
-      "Notes and next steps after the session",
+      "Four weeks with a defined start and finish. Week 1 we find the real bottleneck. Week 2 we bring clarity to people, ownership, and communication. Week 3 you build the practical thing with me alongside you. Week 4 you put it into practice.",
+    outcomes: [
+      "Ministry assessment and systems audit",
+      "Ownership map and communication plan",
+      "Customized workflow, templates, and documentation",
+      "30 day plan and leadership rhythm",
     ],
-    note: "The most common place to start.",
   },
   {
-    slug: "six33-ministry-reset",
-    name: "The Six33 Ministry Reset",
-    format: "4 weeks, one session each week",
+    slug: "ministry-rebuild",
+    name: "The Ministry Rebuild",
+    brief: "An eight week intensive",
+    format: "8-Week Intensive | One Session Per Week",
+    forWhom:
+      "Leaders carrying more than one broken area who need to rebuild how the whole ministry runs.",
     summary:
-      "Four weeks to move from overwhelmed and reactive to clear and organized. We find the real bottleneck, create clarity around it, build the system, and leave you with a plan to keep it running.",
-    includes: [
-      "Week 1: Diagnose the biggest bottleneck",
-      "Week 2: Organize people, responsibilities, and communication",
-      "Week 3: Build the workflows, templates, and rhythms",
-      "Week 4: A 30 day implementation plan",
-      "Ministry assessment and systems audit",
-      "Customized workflow and templates you keep",
+      "Everything in the Reset, plus four more weeks to go wider. We work through the areas the Reset surfaces but cannot finish: leadership and delegation, team structure, the busy season plan, and rolling what you built out to the rest of your team.",
+    outcomes: [
+      "Everything in the Reset",
+      "Delegation and leadership development plan",
+      "Team rollout, with your people trained",
+      "Busy season plan that protects home",
+      "90 day plan and check-in rhythm",
+      "Documentation your team is already using",
     ],
   },
   {
     slug: "ongoing-consulting",
-    name: "Ongoing Consulting",
-    format: "Monthly, defined scope",
+    name: "Ongoing 1-On-1 Consulting",
+    brief: "Monthly",
+    format: "Monthly Session (60 Minutes) | 6 or 12 Months | Defined Scope",
+    forWhom: "Leaders who want a consistent place to think, build, and stay accountable.",
     summary:
-      "A steady working relationship for leaders who want to keep building. Scope is agreed up front so both of us know exactly what is included each month.",
-    includes: [
-      "Monthly leadership coaching sessions",
-      "Systems and production consulting",
-      "Workflow and process development",
-      "Automation and AI consulting",
-      "Team development and ministry planning",
-      "A defined scope, not unlimited support",
+      "We agree on what we are working on before we start: leadership coaching, systems and production consulting, workflow development, automation and AI, team development, or ministry planning. A defined scope, not unlimited support.",
+    outcomes: [
+      "Monthly working session",
+      "An agreed scope set before we start",
+      "Steady progress on one area at a time",
+      "Accountability between sessions",
     ],
-    note: "Scope and expectations are set before we start.",
-  },
-  {
-    slug: "custom-church-systems",
-    name: "Custom Church Systems Projects",
-    format: "Scoped project",
-    summary:
-      "For churches that need one specific system built or rebuilt. We scope the work, build it with your team, and hand it over documented.",
-    includes: [
-      "Sunday production system",
-      "Worship volunteer system",
-      "ProPresenter workflow",
-      "Church communication system",
-      "Ministry workflow audit",
-      "AI and automation implementation",
-    ],
-    audience: "For churches",
   },
 ];
+
+/** Engagement detail and pricing are not on the site. They go in the packet. */
+export const packetNote = "Full details and pricing are covered after your discovery call.";
+
+export const teamNote =
+  "Team and staff sessions are also available, virtual or in person. We will talk through the right fit on your consultation.";
 
 /** The four weeks of the Ministry Reset, also used as the "how it works" path. */
 export const resetWeeks = [

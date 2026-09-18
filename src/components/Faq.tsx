@@ -1,7 +1,8 @@
 import PixelArt from "./PixelArt";
 import Section, { type Background } from "./Section";
 import Reveal from "./Reveal";
-import { Eyebrow, LinkButton } from "./Button";
+import { Eyebrow } from "./Button";
+import BookingCta from "./BookingCta";
 import { faqs } from "@/lib/site";
 
 export default function Faq({ background = "cream" }: { background?: Background }) {
@@ -17,7 +18,7 @@ export default function Faq({ background = "cream" }: { background?: Background 
           </h2>
           <p className="mt-6 text-sm text-stone">Still curious?</p>
           <div className="mt-3">
-            <LinkButton href="/contact#book">Book a consultation</LinkButton>
+            <BookingCta align="left" />
           </div>
           <PixelArt seed={11} count={26} className="mt-12 h-28 w-56" />
         </Reveal>

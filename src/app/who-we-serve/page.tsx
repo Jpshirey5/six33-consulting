@@ -5,7 +5,8 @@ import Reveal from "@/components/Reveal";
 import PixelArt from "@/components/PixelArt";
 import AudienceTabs from "@/components/AudienceTabs";
 import FinalCta from "@/components/FinalCta";
-import { Eyebrow, LinkButton } from "@/components/Button";
+import { Eyebrow } from "@/components/Button";
+import BookingCta from "@/components/BookingCta";
 import { audiences } from "@/lib/audiences";
 import { site } from "@/lib/site";
 
@@ -66,7 +67,7 @@ export default function WhoWeServePage() {
                       ))}
                     </ul>
                     <div className="mt-8">
-                      <LinkButton href="/contact#book">Book a consultation</LinkButton>
+                      <BookingCta align="left" />
                     </div>
                   </div>
                 </div>

@@ -8,8 +8,10 @@ export const site = {
   url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.six33consulting.com",
   // Placeholder. Swap for the real address when the domain is set up.
   email: "john@[yourdomain].com",
-  // Placeholder booking link. Replace with your Cal.com or Calendly event URL.
-  bookingUrl: process.env.NEXT_PUBLIC_BOOKING_URL ?? "https://cal.com/your-username/free-call",
+  // PLACEHOLDER Calendly link for the free discovery call.
+  // Replace with your real event URL, or set NEXT_PUBLIC_BOOKING_URL.
+  // The Calendly event itself must ask for Name, Email, Church, and Role.
+  bookingUrl: process.env.NEXT_PUBLIC_BOOKING_URL ?? "https://calendly.com/six33consulting/discovery-call",
   founder: {
     name: "John Shirey",
     title: "Founder",
@@ -75,7 +77,7 @@ export const faqs = [
   },
   {
     q: "What does it cost?",
-    a: "Investment depends on which option fits and how much is involved, so we talk it through on the intro call once we know what you are actually dealing with. That way you are not guessing, and neither are we.",
+    a: "Investment depends on which option fits and how much is involved, so we talk it through on your consultation once we know what you are actually dealing with. That way you are not guessing, and neither are we.",
   },
   {
     q: "Is everything virtual?",
@@ -83,6 +85,6 @@ export const faqs = [
   },
   {
     q: "What if my church cannot pay for it?",
-    a: "Some leaders invest personally and some churches cover it as staff or ministry development. Bring it up on the intro call and we will help you think it through.",
+    a: "Some leaders invest personally and some churches cover it as staff or ministry development. Bring it up on your consultation and we will help you think it through.",
   },
 ] as const;

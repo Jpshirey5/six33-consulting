@@ -3,19 +3,19 @@ import PageIntro from "@/components/PageIntro";
 import Container from "@/components/Container";
 import Reveal from "@/components/Reveal";
 import PixelArt from "@/components/PixelArt";
-import ServiceCard from "@/components/ServiceCard";
 import SectionHead from "@/components/SectionHead";
-import StepsTabs from "@/components/StepsTabs";
+import EngagementCard from "@/components/EngagementCard";
+import BookingCta from "@/components/BookingCta";
 import Faq from "@/components/Faq";
 import FinalCta from "@/components/FinalCta";
-import { Eyebrow, LinkButton } from "@/components/Button";
-import { coreAreas, engagements } from "@/lib/services";
+import { Eyebrow } from "@/components/Button";
+import { coreAreas, engagements, packetNote, teamNote } from "@/lib/services";
 import { site } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Services",
   description:
-    "Worship leadership coaching, worship production and systems, and ministry and church systems consulting. One session, a four week reset, ongoing consulting, or a custom church systems project.",
+    "Worship leadership coaching and worship production and systems consulting for church leaders. Start with a free discovery call.",
   alternates: { canonical: "/services" },
   openGraph: { title: `Services | ${site.name}`, url: "/services" },
 };
@@ -27,15 +27,16 @@ export default function ServicesPage() {
         eyebrow="Services"
         title={
           <>
-            Three areas of work.
+            Two areas of work.
             <br />
-            <em>Four ways to start.</em>
+            <em>One place to start.</em>
           </>
         }
-        text="Leadership, production, and ministry systems. Bring one problem to a single session, or work through the whole thing over four weeks. Investment is discussed on the intro call."
+        text="Worship leadership and worship production. Most leaders start in one and find the other was part of the same problem."
       />
 
-      <section aria-label="Core consulting areas" className="py-8">
+      {/* The two areas */}
+      <section aria-label="Areas of work" className="py-8">
         <Container>
           <div className="space-y-4">
             {coreAreas.map((area, i) => (
@@ -67,9 +68,7 @@ export default function ServicesPage() {
                     <p className="mt-6 border-t border-line pt-5 text-sm font-medium text-ink sm:text-base">
                       {area.outcome}
                     </p>
-                    <div className="mt-8">
-                      <LinkButton href="/contact#book">Book a consultation</LinkButton>
-                    </div>
+                    <BookingCta align="left" className="mt-8" />
                   </div>
                 </div>
               </Reveal>
@@ -78,35 +77,32 @@ export default function ServicesPage() {
         </Container>
       </section>
 
-      <section aria-labelledby="ladder-heading" className="py-16 sm:py-24">
+      {/* Engagements, named only */}
+      <section aria-labelledby="engagements-heading" className="py-16 sm:py-20">
         <Container>
           <SectionHead
-            id="ladder-heading"
-            eyebrow="Ways to work together"
+            id="engagements-heading"
+            eyebrow="Ways we work together"
             title={
               <>
-                Start small.
+                Three engagements.
                 <br />
-                <em>Go as deep as it needs.</em>
+                <em>We pick the fit together.</em>
               </>
             }
-            text="Most leaders start with a single consultation on the thing that is most stuck, then decide from there. Nothing here requires a long commitment up front."
+            text="Which one makes sense depends on what you are carrying. That is what the discovery call is for."
           />
-          <div className="mt-12 grid gap-4 md:grid-cols-2 lg:grid-cols-4">
-            {engagements.map((service, i) => (
-              <Reveal key={service.slug} delay={(i % 4) * 70}>
-                <ServiceCard service={service} highlight={service.slug === "six33-ministry-reset"} />
-              </Reveal>
+          <ul className="mx-auto mt-10 grid max-w-3xl gap-3">
+            {engagements.map((engagement) => (
+              <EngagementCard key={engagement.slug} engagement={engagement} />
             ))}
-          </div>
-          <p className="mx-auto mt-8 max-w-xl text-center text-sm text-stone">
-            Not sure which one fits? Book an intro call and we will help you pick, even if the answer is that you do
-            not need us yet.
-          </p>
+          </ul>
+          <p className="mx-auto mt-6 max-w-3xl text-center text-sm font-medium text-ink">{packetNote}</p>
+          <p className="mx-auto mt-3 max-w-2xl text-center text-sm text-stone">{teamNote}</p>
+          <BookingCta className="mt-10" />
         </Container>
       </section>
 
-      <StepsTabs />
       <Faq />
       <FinalCta />
     </>

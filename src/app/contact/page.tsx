@@ -12,7 +12,7 @@ import { site } from "@/lib/site";
 export const metadata: Metadata = {
   title: "Contact",
   description:
-    "Book a consultation or send a message to Six33 Consulting. Tell us what you are carrying and where it is breaking down.",
+    "Book a free discovery call or send a message to Six33 Consulting. Tell us what you are carrying and where it is breaking down.",
   alternates: { canonical: "/contact" },
   openGraph: { title: `Contact | ${site.name}`, url: "/contact" },
 };
@@ -24,7 +24,7 @@ const cards = [
     link: { label: site.email, href: `mailto:${site.email}` },
   },
   {
-    title: "Book a consultation",
+    title: "Book a discovery call",
     text: "Bring the problem that is most stuck. We will start with an intro conversation about what you are dealing with and what would actually help.",
     link: { label: "Pick a time below", href: "#book" },
   },
@@ -56,7 +56,7 @@ export default function ContactPage() {
             <em>you are carrying.</em>
           </>
         }
-        text="Book a consultation, ask a question, or describe what your week actually looks like. A real person responds, usually within a day."
+        text="Book a free discovery call, ask a question, or describe what your week actually looks like. A real person responds, usually within a day."
       />
 
       <section aria-label="Contact options" className="py-8">
@@ -90,7 +90,7 @@ export default function ContactPage() {
         <Container>
           <div className="grid gap-8 lg:grid-cols-[1fr_1.5fr] lg:gap-16">
             <Reveal>
-              <p className="text-xs font-semibold uppercase tracking-[0.12em] text-bronze-deep">Book a consultation</p>
+              <p className="text-xs font-semibold uppercase tracking-[0.12em] text-bronze-deep">Book a discovery call</p>
               <h2 id="book-heading" className="mt-4 text-3xl sm:text-4xl">
                 Pick a time <em>that works for you.</em>
               </h2>

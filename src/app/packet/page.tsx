@@ -4,7 +4,7 @@ import { LogoMark } from "@/components/Logo";
 import PixelArt from "@/components/PixelArt";
 import PrintButton from "@/components/PrintButton";
 import { LinkButton } from "@/components/Button";
-import { coreAreas, engagements, resetWeeks, shifts, solution } from "@/lib/services";
+import { consultation, coreAreas, engagements, resetWeeks, shifts, solution } from "@/lib/services";
 import { framework } from "@/components/Pillars";
 import { site } from "@/lib/site";
 
@@ -68,8 +68,8 @@ export default function PacketPage() {
             </blockquote>
 
             <div className="mt-8 flex flex-wrap items-center gap-3">
-              <LinkButton href="/contact#book" className="no-print">
-                Book a consultation
+              <LinkButton href={site.bookingUrl} target="_blank" rel="noopener noreferrer" className="no-print">
+                Book a discovery call
               </LinkButton>
               <PrintButton />
             </div>
@@ -167,11 +167,23 @@ export default function PacketPage() {
               </Section>
             ))}
 
-            {engagements.slice(1).map((e, i) => (
-              <Section key={e.slug} number={`0${i + 7}`} title={e.name} breakBefore={i === 0}>
+            <Section number="07" title={consultation.name} breakBefore>
+              <p className="text-sm font-medium text-stone">{consultation.format}</p>
+              <p>{consultation.summary}</p>
+              <p className="mt-4 rounded-lg bg-sand px-5 py-4 text-sm font-medium text-ink">
+                This is the entry point. Every engagement below starts with one of these.
+              </p>
+            </Section>
+
+            {engagements.map((e, i) => (
+              <Section key={e.slug} number={`0${i + 8}`} title={e.name}>
                 <p className="text-sm font-medium text-stone">{e.format}</p>
+                <p className="mt-3 text-xs font-semibold uppercase tracking-[0.12em] text-bronze-deep">
+                  Who this is for
+                </p>
+                <p className="mt-2">{e.forWhom}</p>
                 <p>{e.summary}</p>
-                {e.slug === "six33-ministry-reset" && (
+                {e.slug === "ministry-reset" && (
                   <ul className="mt-5 grid gap-3 sm:grid-cols-2">
                     {resetWeeks.map((w) => (
                       <li key={w.name} className="rounded-lg bg-sand p-5">
@@ -183,24 +195,23 @@ export default function PacketPage() {
                   </ul>
                 )}
                 <p className="mt-4 text-xs font-semibold uppercase tracking-[0.12em] text-bronze-deep">
-                  {e.slug === "custom-church-systems" ? "Example projects" : "What is included"}
+                  What you leave with
                 </p>
                 <ul className="mt-3 space-y-2">
-                  {e.includes.map((item) => (
+                  {e.outcomes.map((item) => (
                     <li key={item} className="flex items-start gap-2.5 text-sm text-stone">
                       <span aria-hidden="true" className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-bronze" />
                       {item}
                     </li>
                   ))}
                 </ul>
-                {e.note && <p className="mt-4 text-sm text-stone">{e.note}</p>}
               </Section>
             ))}
 
-            <Section number="10" title="What working together looks like" breakBefore>
+            <Section number="11" title="What working together looks like" breakBefore>
               <p>
-                Most leaders start with a single consultation on whatever is most stuck. Bring the problem, leave
-                with a clear next step. From there, some people go deeper and some do not, and both are fine.
+                Every engagement starts with a One-Time Focused Consultation. Bring the problem, leave with a
+                clear next step. From there, some leaders go deeper and some do not, and both are fine.
               </p>
               <ul className="mt-5 space-y-4">
                 {resetWeeks.map((w, i) => (
@@ -218,13 +229,12 @@ export default function PacketPage() {
                 ))}
               </ul>
               <p className="mt-6">
-                Sessions are virtual unless noted. Team and staff sessions can be done in person, with travel
-                quoted separately. Investment depends on which option fits and how much is involved, so we talk it
-                through on the intro call once we know what you are actually dealing with.
+                Sessions are virtual unless noted. Team and staff sessions are also available, virtual or in
+                person. We will talk through the right fit on your consultation.
               </p>
             </Section>
 
-            <Section number="11" title="About the founder">
+            <Section number="12" title="About the founder">
               <p>
                 John Shirey has served in ministry since he was fourteen, leading worship in churches across
                 Florida, Virginia, and New York, and he continues to serve in local church ministry today. He has
@@ -244,13 +254,13 @@ export default function PacketPage() {
               <p>He lives in the Tampa Bay area of Florida.</p>
             </Section>
 
-            <Section number="12" title="Let us talk">
+            <Section number="13" title="Let us talk">
               <p>
                 Tell us what you are carrying and where it is breaking down. If Six33 is a fit, we will walk through
                 exactly what working together would look like. If it is not, we will tell you that too.
               </p>
               <div className="mt-6 rounded-card bg-ink p-7 text-white">
-                <p className="font-heading text-2xl font-medium">Book a consultation</p>
+                <p className="font-heading text-2xl font-medium">Book a discovery call</p>
                 <p className="mt-3 text-sm text-white/80">
                   Bring the one thing that is most stuck. We will start there.
                 </p>

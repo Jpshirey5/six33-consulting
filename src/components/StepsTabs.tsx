@@ -90,7 +90,7 @@ export default function StepsTabs({ background = "cream" }: { background?: Backg
             </ul>
 
             <p className="mt-6 text-xs text-stone">
-              This is the shape of the Six33 Ministry Reset. Single consultations follow the same thinking in one
+              This is the shape of The Ministry Reset. A single consultation follows the same thinking in one
               session.
             </p>
           </div>
