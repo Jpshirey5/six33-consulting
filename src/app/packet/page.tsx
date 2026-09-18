@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Container from "@/components/Container";
-import LogoMark from "@/components/LogoMark";
+import { LogoMark } from "@/components/Logo";
 import PixelArt from "@/components/PixelArt";
 import PrintButton from "@/components/PrintButton";
 import { LinkButton } from "@/components/Button";

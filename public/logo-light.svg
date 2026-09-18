@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 145 52" width="145" height="52" role="img" aria-label="Six33 Consulting">
+  <rect x="2" y="2" width="48" height="48" rx="12" fill="none" stroke="#FFFFFF" stroke-width="4"/>
+  <path d="M14 33 L26 19 L38 33" fill="none" stroke="#FFFFFF" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="21" y="8" width="10" height="10" rx="2.5" fill="#F48D16"/>
+  <!-- textLength pins both lines to the same 72px span in any font, so the
+       wordmark stays aligned even where Montserrat is unavailable. -->
+  <text x="67" y="28" textLength="72" lengthAdjust="spacing" font-family="Montserrat, Helvetica, Arial, sans-serif" font-size="24" font-weight="600" fill="#FFFFFF">SIX<tspan fill="#F48D16">33</tspan></text>
+  <text x="67" y="41" textLength="72" lengthAdjust="spacing" font-family="Montserrat, Helvetica, Arial, sans-serif" font-size="8" font-weight="600" fill="#FFFFFF">CONSULTING</text>
+</svg>

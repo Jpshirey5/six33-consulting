@@ -59,5 +59,5 @@ export function Button({ variant = "dark", className = "", children, ...rest }: 
 
 /** Small bronze text label above a heading. */
 export function Eyebrow({ children, className = "" }: { children: ReactNode; className?: string }) {
-  return <p className={`text-xs font-semibold uppercase tracking-[0.12em] text-bronze-deep ${className}`}>{children}</p>;
+  return <p className={`eyebrow text-xs font-semibold uppercase tracking-[0.12em] text-bronze-deep ${className}`}>{children}</p>;
 }

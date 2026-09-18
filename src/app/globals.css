@@ -55,6 +55,110 @@ h3 em,
   color: rgba(255, 255, 255, 0.72);
 }
 
+/* ---------------------------------------------------------------
+   Dark sections. <Section background="ink"> adds .on-ink, and these
+   rules recolor its contents automatically, so section content does
+   not need per-element dark styling. Declared outside @layer so they
+   win over Tailwind utilities like text-stone or text-ink that the
+   shared components already carry.
+
+   Contrast on #251F19: white 16.3:1, white/72% 9.0:1, #F48D16 6.7:1.
+   The deep bronze #B25400 only reaches 3.2:1, so eyebrows switch to
+   #F48D16 here.
+   --------------------------------------------------------------- */
+.on-ink {
+  color: #ffffff;
+}
+
+/* Headings and key lines stay pure white. */
+.on-ink h1,
+.on-ink h2,
+.on-ink h3,
+.on-ink h4,
+.on-ink strong,
+.on-ink blockquote p {
+  color: #ffffff;
+}
+
+/* Body copy: white at 72%, about #C2C0BF on ink. */
+.on-ink p,
+.on-ink li,
+.on-ink dd,
+.on-ink figcaption {
+  color: rgba(255, 255, 255, 0.72);
+}
+
+/* The serif italic accent line reads as body copy, not as a heading. */
+.on-ink h1 em,
+.on-ink h2 em,
+.on-ink h3 em,
+.on-ink .accent {
+  color: rgba(255, 255, 255, 0.72);
+}
+
+/* Small uppercase labels: the deep bronze is too dark to read here. */
+.on-ink .eyebrow {
+  color: var(--color-bronze);
+}
+
+/* Shared components hardcode text-ink / text-stone for the light
+   backgrounds. Remapping the utilities here means any section can move onto
+   ink without its internals being restyled at the call site. */
+/* The :not() chain skips controls that carry their own light fill: filled
+   buttons (every Button/LinkButton has rounded-btn) and white or sand pills
+   keep their ink label. Bare text controls, like the step tabs, are remapped. */
+.on-ink :is(.text-ink, .text-charcoal):not([class*="rounded-btn"]):not(.bg-white):not(.bg-sand) {
+  color: #ffffff;
+}
+
+.on-ink .text-stone:not([class*="rounded-btn"]):not(.bg-white):not(.bg-sand) {
+  color: rgba(255, 255, 255, 0.72);
+}
+
+/* The deep bronze fails contrast on ink; the brighter bronze passes. */
+.on-ink .text-bronze-deep {
+  color: var(--color-bronze);
+}
+
+/* Faded number watermarks, e.g. text-ink/30. */
+/* Decorative number watermarks. 0.38 keeps them at 3.4:1 measured against
+   the card wash they sit on, not against bare ink. */
+.on-ink [class*="text-ink/"] {
+  color: rgba(255, 255, 255, 0.38);
+}
+
+.on-ink [class*="hover:text-ink"]:hover {
+  color: #ffffff;
+}
+
+/* Tinted chips and rules, e.g. bg-sand/70, bg-line. */
+.on-ink [class*="bg-sand/"]:not(a):not(button),
+.on-ink [class*="bg-white/"]:not(a):not(button) {
+  background-color: rgba(255, 255, 255, 0.07);
+}
+
+.on-ink .bg-line {
+  background-color: rgba(255, 255, 255, 0.22);
+}
+
+/* Cards stay dark with a subtle lighter border, so the block stays calm.
+   Buttons and links are excluded: the light button variant needs its real
+   white fill to keep its ink label readable. */
+.on-ink :is(.card, .bg-white, .bg-sand):not(a):not(button) {
+  background-color: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  box-shadow: none;
+}
+
+.on-ink hr,
+.on-ink .border-line {
+  border-color: rgba(255, 255, 255, 0.16);
+}
+
+.on-ink a:not([class*="bg-"]) {
+  color: #ffffff;
+}
+
 ::selection {
   background: var(--color-bronze);
   color: #ffffff;

@@ -1,7 +1,6 @@
 import Link from "next/link";
 import Container from "./Container";
-import Logo from "./Logo";
-import LogoMark from "./LogoMark";
+import Logo, { LogoMark } from "./Logo";
 import PixelArt from "./PixelArt";
 import { navLinks, site } from "@/lib/site";
 
