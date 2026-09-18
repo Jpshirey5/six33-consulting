@@ -3,49 +3,60 @@ import PixelArt from "./PixelArt";
 import Reveal from "./Reveal";
 import SectionHead from "./SectionHead";
 
-const cards = [
-  { number: "01.", title: "Faith first", text: "Daily and weekly rhythms that keep you connected to Christ before the week starts pulling on you." },
+export const framework = [
+  {
+    number: "01.",
+    name: "Faith",
+    question: "Am I leading from a healthy relationship with God?",
+    text: "The work of ministry has a way of replacing the relationship that started it. Before anything else gets built, this is the one that has to hold.",
+  },
   {
     number: "02.",
-    title: "Family second",
-    text: "Protected family time, clear boundaries, and family rhythms your home can count on. Your spouse and kids get the best of you, not what is left.",
+    name: "Family",
+    question: "Does the way I lead allow me to be present for the people God has entrusted to me?",
+    text: "The people closest to you should not get whatever is left over. How you lead should leave room for the ones at home.",
   },
-  { number: "03.", title: "Ministry third", text: "A healthy pace, a shared load, and leaders raised up around you, so ministry stops running on you alone." },
-  { number: "04.", title: "For the long haul", text: "A plan for busy seasons so the new order holds when Easter, Christmas, and everything else arrives." },
+  {
+    number: "03.",
+    name: "Ministry",
+    question: "Are my ministry and systems helping me accomplish what actually matters?",
+    text: "Your systems should support the calling, not become the calling. When ministry is third, it usually gets healthier, not smaller.",
+  },
 ];
 
-/** Four numbered cards, one highlighted, like the template's "Why" row. */
+/** The Six33 framework: three questions, always in the same order. */
 export default function Pillars() {
   return (
     <section aria-labelledby="pillars-heading" className="py-16 sm:py-24">
       <Container>
         <SectionHead
           id="pillars-heading"
-          eyebrow="Why Six33"
+          eyebrow="The Six33 Framework"
           title={
             <>
-              First things first,
+              Faith first. Family second.
               <br />
-              <em>in that order.</em>
+              <em>Ministry third.</em>
             </>
           }
-          text="Most leaders did not drift out of order on purpose. The week filled up, someone needed them, and the people at home learned to expect the tired version. We help you put it back in order, and keep it there."
+          text="Three questions we come back to in every engagement. Not because we are trying to make consulting spiritual, but because leaders who get this order wrong eventually pay for it somewhere else."
         />
-        <ul className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-          {cards.map((card, i) => (
+        <ul className="mt-12 grid gap-4 lg:grid-cols-3">
+          {framework.map((card, i) => (
             <Reveal
               as="li"
               key={card.number}
               delay={i * 80}
-              className="flex min-h-[320px] flex-col justify-between rounded-card bg-white p-6 shadow-[0_1px_0_#e4e0dd]"
+              className="flex min-h-[340px] flex-col justify-between rounded-card bg-white p-7 shadow-[0_1px_0_#e4e0dd]"
             >
               <div>
                 <p className="font-heading text-4xl font-medium text-ink/30 lining-nums">{card.number}</p>
-                <PixelArt seed={i + 3} className="mt-6 h-20 w-36" />
+                <PixelArt seed={i + 13} className="mt-6 h-16 w-32" />
               </div>
               <div>
-                <h3 className="text-xl font-medium text-ink">{card.title}</h3>
-                <p className="mt-2 text-sm leading-relaxed text-stone">{card.text}</p>
+                <h3 className="text-xl font-medium text-ink">{card.name}</h3>
+                <p className="mt-3 font-serif text-xl italic leading-snug text-ink">{card.question}</p>
+                <p className="mt-3 text-sm leading-relaxed text-stone">{card.text}</p>
               </div>
             </Reveal>
           ))}

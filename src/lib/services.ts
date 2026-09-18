@@ -1,4 +1,75 @@
-export type Service = {
+export type CoreArea = {
+  slug: string;
+  name: string;
+  short: string;
+  headline: string;
+  summary: string;
+  focus: string[];
+  outcome: string;
+};
+
+/** The three consulting areas. Everything Six33 does lives under one of these. */
+export const coreAreas: CoreArea[] = [
+  {
+    slug: "worship-leadership-coaching",
+    name: "Worship Leadership Coaching",
+    short: "Lead people. Build culture. Develop leaders.",
+    headline: "Lead the ministry without carrying the entire ministry.",
+    summary:
+      "Practical leadership work for worship leaders and worship pastors. We look at how your team is built, how it communicates, and what only you can currently do, then we start handing pieces of it to other people well.",
+    focus: [
+      "Building a healthy worship ministry",
+      "Leading and developing volunteers",
+      "Team culture and clear expectations",
+      "Rehearsal strategy and service planning",
+      "Team communication that does not live in your texts",
+      "Delegation and raising up future leaders",
+      "Handling difficult team situations",
+      "Sustainable leadership rhythms",
+    ],
+    outcome: "A team that knows what to do, and a ministry that does not depend entirely on you.",
+  },
+  {
+    slug: "worship-production-systems",
+    name: "Worship Production + Systems",
+    short: "Create systems that make Sunday easier.",
+    headline: "Build a Sunday that does not depend on one person remembering everything.",
+    summary:
+      "The place where ministry experience and real systems experience meet. We map how your weekend actually comes together, then rebuild it into something repeatable that your volunteers can run without you standing over it.",
+    focus: [
+      "Sunday run of show and service preparation",
+      "ProPresenter setup, templates, and workflow",
+      "Production and tech team organization",
+      "Volunteer scheduling and workflows",
+      "Documentation your team will actually open",
+      "Automations and practical AI tools",
+      "Church technology that fits the team you have",
+      "Process improvement and communication systems",
+    ],
+    outcome: "A weekend that runs the same way whether or not you are in the building.",
+  },
+  {
+    slug: "ministry-church-systems",
+    name: "Ministry Leader + Church Systems",
+    short: "Get what is in your head into a system that actually works.",
+    headline: "The ministry should not live in one person's memory.",
+    summary:
+      "Broader consulting for pastors, ministry directors, and church staff. We take the responsibilities, decisions, and details you are personally holding and give them a place to live outside of you.",
+    focus: [
+      "Ministry workflows and repeatable processes",
+      "Team structure, ownership, and delegation",
+      "Communication and meeting rhythms",
+      "Process documentation and task management",
+      "Digital organization and file structure",
+      "Automation and AI implementation",
+      "Ministry planning and accountability",
+      "Healthy boundaries and leadership rhythms",
+    ],
+    outcome: "Enough order that productivity serves the calling instead of consuming the person.",
+  },
+];
+
+export type Engagement = {
   slug: string;
   name: string;
   format: string;
@@ -8,65 +79,115 @@ export type Service = {
   audience?: string;
 };
 
-// Pricing is intentionally left off the site. It is discussed on the free call.
-export const services: Service[] = [
+/** The service ladder. Four options, in order of depth.
+ *  Pricing is intentionally kept off the website and discussed on the intro call. */
+export const engagements: Engagement[] = [
   {
-    slug: "balance-blueprint-session",
-    name: "Balance Blueprint Session",
-    format: "90-minute virtual session",
+    slug: "consultation",
+    name: "Consultation",
+    format: "One focused working session",
     summary:
-      "A focused starting point. We look honestly at faith, family, and ministry, name what matters most right now, and leave with a clear plan for the next 30 days.",
-    includes: ["Faith, Family, and Ministry assessment", "Your top three priorities", "A 30-day reset plan"],
-  },
-  {
-    slug: "seek-first-reset",
-    name: "Seek First Reset",
-    format: "4 weekly sessions",
-    summary:
-      "Four weeks to rebuild the rhythms that hold everything else up. You will finish with a personal rhythm of life and a week that actually reflects your priorities.",
-    includes: ["A personal rhythm of life", "Your ideal week calendar", "Boundaries and non-negotiables"],
-  },
-  {
-    slug: "kingdom-builder-intensive",
-    name: "Kingdom Builder Intensive",
-    format: "8 weeks",
-    summary:
-      "Everything in the Reset, plus the practice of sharing the load. We build a healthy pace that holds up through the busiest seasons of the church year.",
+      "One problem, one session. Bring the thing that is stuck and we will work on it together until you have a clear next step you can act on this week.",
     includes: [
-      "Everything in the Seek First Reset",
-      "Delegation and raising up leaders",
-      "A healthy pace through busy seasons like Easter and Christmas",
+      "A leadership, team, or volunteer problem",
+      "A ProPresenter or Sunday workflow problem",
+      "A ministry systems or planning problem",
+      "An automation or AI opportunity",
+      "Notes and next steps after the session",
+    ],
+    note: "The most common place to start.",
+  },
+  {
+    slug: "six33-ministry-reset",
+    name: "The Six33 Ministry Reset",
+    format: "4 weeks, one session each week",
+    summary:
+      "Four weeks to move from overwhelmed and reactive to clear and organized. We find the real bottleneck, create clarity around it, build the system, and leave you with a plan to keep it running.",
+    includes: [
+      "Week 1: Diagnose the biggest bottleneck",
+      "Week 2: Organize people, responsibilities, and communication",
+      "Week 3: Build the workflows, templates, and rhythms",
+      "Week 4: A 30 day implementation plan",
+      "Ministry assessment and systems audit",
+      "Customized workflow and templates you keep",
     ],
   },
   {
-    slug: "leadership-coaching",
-    name: "1-On-1 Leadership Coaching",
-    format: "Monthly 60-minute meeting",
+    slug: "ongoing-consulting",
+    name: "Ongoing Consulting",
+    format: "Monthly, defined scope",
     summary:
-      "Ongoing support for the long haul. A steady monthly conversation to keep first things first as seasons change.",
-    includes: ["One 60-minute meeting each month", "6 or 12 month commitment", "A trusted place to think out loud"],
-  },
-  {
-    slug: "staff-and-team-workshop",
-    name: "Staff and Team Workshop",
-    format: "Half day, virtual or in person",
-    summary:
-      "Bring the whole staff together. A half-day workshop on burnout, soul care, and keeping a healthy pace together.",
-    includes: ["Burnout and its early warning signs", "Soul care for leaders", "Healthy pace as a team"],
-    note: "Available virtually or in person. Travel is quoted separately.",
-  },
-  {
-    slug: "sunday-ready-add-on",
-    name: "Sunday Ready Add-On",
-    format: "2 weeks",
-    audience: "Worship pastors only",
-    summary:
-      "A weekly prep rhythm for set planning, rehearsal flow, and service run-through, so Saturdays go back to the family.",
+      "A steady working relationship for leaders who want to keep building. Scope is agreed up front so both of us know exactly what is included each month.",
     includes: [
-      "A weekly set planning rhythm",
-      "Rehearsal flow that respects everyone's time",
-      "A service run-through that ends on time",
+      "Monthly leadership coaching sessions",
+      "Systems and production consulting",
+      "Workflow and process development",
+      "Automation and AI consulting",
+      "Team development and ministry planning",
+      "A defined scope, not unlimited support",
     ],
-    note: "Can be added to any plan.",
+    note: "Scope and expectations are set before we start.",
+  },
+  {
+    slug: "custom-church-systems",
+    name: "Custom Church Systems Projects",
+    format: "Scoped project",
+    summary:
+      "For churches that need one specific system built or rebuilt. We scope the work, build it with your team, and hand it over documented.",
+    includes: [
+      "Sunday production system",
+      "Worship volunteer system",
+      "ProPresenter workflow",
+      "Church communication system",
+      "Ministry workflow audit",
+      "AI and automation implementation",
+    ],
+    audience: "For churches",
   },
 ];
+
+/** The four weeks of the Ministry Reset, also used as the "how it works" path. */
+export const resetWeeks = [
+  {
+    name: "Diagnose",
+    week: "Week 1",
+    text: "We find the actual bottleneck. Not the symptom you have been managing, the thing underneath it that keeps creating the symptom.",
+    deliverables: ["Ministry assessment", "Systems audit", "The real problem, named"],
+  },
+  {
+    name: "Organize",
+    week: "Week 2",
+    text: "We create clarity around people, responsibilities, communication, and process. Who owns what, and how anyone would know.",
+    deliverables: ["Ownership map", "Communication plan", "Responsibilities out of your head"],
+  },
+  {
+    name: "Build",
+    week: "Week 3",
+    text: "We build the practical thing. Workflows, templates, documentation, or a rhythm your team can run without you in the room.",
+    deliverables: ["Customized workflow", "Templates you keep", "Documentation"],
+  },
+  {
+    name: "Sustain",
+    week: "Week 4",
+    text: "We put it into practice. A 30 day plan, a leadership rhythm, and a clear picture of what happens when the busy season hits.",
+    deliverables: ["30 day implementation plan", "Leadership rhythm", "Recommendations"],
+  },
+] as const;
+
+/** The five outcomes every engagement is aiming at. */
+export const solution = [
+  { title: "Clarity", text: "Know what matters." },
+  { title: "Systems", text: "Know how it gets done." },
+  { title: "People", text: "Know who owns it." },
+  { title: "Rhythms", text: "Know when it happens." },
+  { title: "Sustainability", text: "Build something that can keep working." },
+] as const;
+
+/** Before and after, in plain language. */
+export const shifts = [
+  { from: "Overwhelmed", to: "Organized" },
+  { from: "Reactive", to: "Intentional" },
+  { from: "One person", to: "Repeatable systems" },
+  { from: "Constantly doing", to: "Leading" },
+  { from: "Burnout", to: "Sustainable rhythms" },
+] as const;

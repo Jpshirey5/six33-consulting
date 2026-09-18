@@ -99,3 +99,28 @@ details > summary::-webkit-details-marker {
     transition: none;
   }
 }
+
+/* Packet: print and PDF export. Hides site chrome so the document stands alone. */
+@media print {
+  body {
+    background: #ffffff;
+  }
+  header,
+  footer,
+  .no-print {
+    display: none !important;
+  }
+  .js .reveal {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+  .packet-section {
+    break-inside: avoid;
+  }
+  .packet-break {
+    break-before: page;
+  }
+  a[href]::after {
+    content: "";
+  }
+}

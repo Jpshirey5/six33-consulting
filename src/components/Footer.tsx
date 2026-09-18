@@ -7,7 +7,7 @@ import { navLinks, site } from "@/lib/site";
 
 const columns = [
   { title: "Explore", links: navLinks.slice(0, 3) },
-  { title: "Get started", links: [navLinks[3], navLinks[4], { href: "/contact#book", label: "Book a free call" }] },
+  { title: "Get started", links: [navLinks[3], navLinks[4], { href: "/contact#book", label: "Book a consultation" }] },
   { title: "Legal", links: [{ href: "/privacy", label: "Privacy policy" }] },
 ];
 
@@ -20,8 +20,8 @@ export default function Footer() {
           <div>
             <Logo />
             <p className="mt-4 max-w-xs text-sm leading-relaxed text-stone">
-              Faith-based leadership and life consulting for ministry pastors, worship pastors, and church staff.
-              {" "}{site.tagline}
+              Ministry and leadership consulting for worship leaders, pastors, ministry directors, and church
+              teams. Leadership, production, and systems that do not depend on one person.{" "}{site.tagline}
             </p>
           </div>
           <div className="grid gap-8 sm:grid-cols-[repeat(3,auto)_1fr] sm:gap-12">

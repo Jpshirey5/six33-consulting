@@ -1,8 +1,8 @@
 import Image from "next/image";
 import { LinkButton } from "./Button";
-import type { Service } from "@/lib/services";
+import type { Engagement } from "@/lib/services";
 
-export default function ServiceCard({ service, highlight = false }: { service: Service; highlight?: boolean }) {
+export default function ServiceCard({ service, highlight = false }: { service: Engagement; highlight?: boolean }) {
   return (
     <article
       id={service.slug}
@@ -36,7 +36,7 @@ export default function ServiceCard({ service, highlight = false }: { service: S
         {service.note && <p className={`mt-4 text-xs ${highlight ? "text-white/70" : "text-stone"}`}>{service.note}</p>}
         <div className="mt-7">
           <LinkButton href="/contact#book" variant={highlight ? "light" : "dark"} className="w-full">
-            Book a free call<span className="sr-only"> about the {service.name}</span>
+            Book a Consultation<span className="sr-only"> about the {service.name}</span>
           </LinkButton>
         </div>
       </div>

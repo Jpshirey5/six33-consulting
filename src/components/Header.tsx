@@ -53,7 +53,7 @@ export default function Header() {
               ))}
             </ul>
           </nav>
-          <LinkButton href="/contact#book">Book a Free Call</LinkButton>
+          <LinkButton href="/contact#book">Book a Consultation</LinkButton>
         </div>
 
         <button
@@ -97,7 +97,7 @@ export default function Header() {
           ))}
           <li className="pb-3 pt-3">
             <LinkButton href="/contact#book" className="w-full justify-start" onClick={() => setOpen(false)}>
-              Book a Free Call
+              Book a Consultation
             </LinkButton>
           </li>
         </ul>

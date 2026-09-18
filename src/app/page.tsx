@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Hero from "@/components/Hero";
+import Problem from "@/components/Problem";
+import Solution from "@/components/Solution";
+import CoreAreas from "@/components/CoreAreas";
 import Pillars from "@/components/Pillars";
 import StepsTabs from "@/components/StepsTabs";
 import Testimonials from "@/components/Testimonials";
@@ -12,7 +15,7 @@ import ServiceCard from "@/components/ServiceCard";
 import SectionHead from "@/components/SectionHead";
 import Container from "@/components/Container";
 import Reveal from "@/components/Reveal";
-import { services } from "@/lib/services";
+import { engagements } from "@/lib/services";
 import { site } from "@/lib/site";
 
 export const metadata: Metadata = {
@@ -21,13 +24,15 @@ export const metadata: Metadata = {
   alternates: { canonical: "/" },
 };
 
-const featured = services.slice(0, 3);
+const featured = engagements.slice(0, 3);
 
 export default function HomePage() {
   return (
     <>
       <Hero />
-      <Pillars />
+      <Problem />
+      <Solution />
+      <CoreAreas />
       <StepsTabs />
       <Testimonials />
 
@@ -35,15 +40,15 @@ export default function HomePage() {
         <Container>
           <SectionHead
             id="services-heading"
-            eyebrow="Services"
+            eyebrow="Ways to work together"
             title={
               <>
-                Simple, honest options.
+                Start small.
                 <br />
-                <em>No surprises.</em>
+                <em>Go as deep as it needs.</em>
               </>
             }
-            text="Every engagement is virtual unless noted, and every one begins with an honest look at faith, family, and ministry. Investment is discussed on your free call."
+            text="One session for one problem, four weeks to reset a ministry, or an ongoing relationship. Every engagement is virtual unless noted, and investment is discussed on the intro call."
           />
           <div className="mt-12 grid gap-4 lg:grid-cols-3">
             {featured.map((service, i) => (
@@ -53,7 +58,7 @@ export default function HomePage() {
             ))}
           </div>
           <p className="mt-6 text-center text-sm text-stone">
-            Also available: leadership coaching, staff workshops, and the Sunday Ready add-on.{" "}
+            Churches needing one specific system built or rebuilt can also scope a custom project.{" "}
             <Link href="/services" className="font-medium text-bronze-deep underline-offset-4 hover:underline">
               See all services
             </Link>
@@ -61,6 +66,7 @@ export default function HomePage() {
         </Container>
       </section>
 
+      <Pillars />
       <AudienceTabs />
       <Faq />
       <VerseBlock />

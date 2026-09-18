@@ -18,7 +18,7 @@ export default function Faq() {
             </h2>
             <p className="mt-6 text-sm text-stone">Still curious?</p>
             <div className="mt-3">
-              <LinkButton href="/contact#book">Book a free call</LinkButton>
+              <LinkButton href="/contact#book">Book a consultation</LinkButton>
             </div>
             <PixelArt seed={11} count={26} className="mt-12 h-28 w-56" />
           </Reveal>

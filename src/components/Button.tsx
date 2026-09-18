@@ -1,7 +1,7 @@
 import Link from "next/link";
 import type { ComponentProps, ReactNode } from "react";
 
-type Variant = "dark" | "light" | "outline";
+type Variant = "dark" | "light" | "outline" | "ghost";
 
 const base =
   "group inline-flex items-center gap-3 whitespace-nowrap rounded-btn py-1.5 pl-1.5 pr-5 text-sm font-medium transition-colors duration-200 disabled:cursor-not-allowed disabled:opacity-60";
@@ -10,6 +10,7 @@ const variants: Record<Variant, string> = {
   dark: "bg-ink text-white hover:bg-charcoal",
   light: "bg-white text-ink hover:bg-sand",
   outline: "border border-line bg-transparent text-ink hover:bg-white",
+  ghost: "border border-white/35 bg-white/10 text-white hover:bg-white/20",
 };
 
 function Icon() {

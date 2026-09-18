@@ -2,18 +2,20 @@ import type { Metadata } from "next";
 import PageIntro from "@/components/PageIntro";
 import Container from "@/components/Container";
 import Reveal from "@/components/Reveal";
-import SectionHead from "@/components/SectionHead";
 import PixelArt from "@/components/PixelArt";
+import SectionHead from "@/components/SectionHead";
 import StepsTabs from "@/components/StepsTabs";
 import VerseBlock from "@/components/VerseBlock";
 import Faq from "@/components/Faq";
 import FinalCta from "@/components/FinalCta";
+import { Eyebrow } from "@/components/Button";
+import { solution } from "@/lib/services";
 import { site } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "The Six33 Framework",
   description:
-    "Three pillars and four steps for ministry leaders: faith rooted before busy, family present not leftover, and ministry that is fruitful and faithful.",
+    "Faith first, family second, ministry third. Three questions Six33 Consulting comes back to in every engagement, and the work that follows from them.",
   alternates: { canonical: "/framework" },
   openGraph: { title: `The Six33 Framework | ${site.name}`, url: "/framework" },
 };
@@ -21,24 +23,30 @@ export const metadata: Metadata = {
 const pillars = [
   {
     number: "01.",
-    name: "Faith",
-    title: "Rooted Before Busy",
-    text: "Daily and weekly spiritual rhythms that keep you connected to Christ. Before the week starts pulling on you, you have already been with God, not as preparation for a sermon or a set, but as a son or daughter.",
-    points: ["A simple daily rhythm you can actually keep", "A weekly Sabbath that is protected", "Personal worship that is yours again"],
+    name: "Faith first",
+    question: "Am I leading from a healthy relationship with God?",
+    body: [
+      "Before leading a team, running a ministry, building an organization, or serving anyone else, a leader has to stay rooted in their own relationship with God.",
+      "Matthew 6:33 is not just where the name comes from. It is the order everything else gets built on. When the work of ministry quietly replaces the relationship that started it, everything downstream gets harder, and usually nobody notices for a while.",
+    ],
   },
   {
     number: "02.",
-    name: "Family",
-    title: "Present, Not Leftover",
-    text: "Protected family time, clear boundaries, and family rhythms your home can count on. Your spouse and kids get the best of you, not what is left over after the church has had its share.",
-    points: ["Protected family time on the calendar", "Boundaries and non-negotiables", "Family rhythms for meals, rest, and play"],
+    name: "Family second",
+    question: "Does the way I lead allow me to be present for the people God has entrusted to me?",
+    body: [
+      "The people closest to you should not receive whatever is left over.",
+      "Healthy ministry leadership should leave room to actually be present with your spouse, your kids, and the people at home. The goal is not to become more productive. It is to build rhythms and systems that let you serve faithfully without ministry consuming everything else.",
+    ],
   },
   {
     number: "03.",
-    name: "Ministry",
-    title: "Fruitful and Faithful",
-    text: "A healthy pace, a shared load, and leaders raised up around you, so you can serve for the long haul without ministry taking over your home. Ministry flows from faith and family, not the other way around.",
-    points: ["A pace you can keep through busy seasons", "Delegation and raising up other leaders", "Serving faithfully for the long haul"],
+    name: "Ministry third",
+    question: "Are my ministry and systems helping me accomplish what actually matters?",
+    body: [
+      "Whether you are leading worship, pastoring, managing volunteers, running production, or building a ministry organization, your systems should support the calling instead of becoming the calling.",
+      "Ministry third does not mean ministry matters less. In practice it usually means the ministry gets healthier, because it stops depending on one exhausted person to hold it together.",
+    ],
   },
 ];
 
@@ -54,45 +62,88 @@ export default function FrameworkPage() {
             <em>Ministry third.</em>
           </>
         }
-        text="Three pillars, always in the same order, and four steps to get there. Everything we build starts here."
+        text="Three questions, always in the same order. They shape how we diagnose problems, what we recommend, and what we refuse to recommend."
       />
       <VerseBlock />
 
-      <section aria-labelledby="pillars-heading" className="py-16 sm:py-24">
+      <section aria-label="The three questions" className="py-8">
         <Container>
-          <SectionHead
-            id="pillars-heading"
-            eyebrow="Three pillars"
-            title={
-              <>
-                One order,
-                <br />
-                <em>three pillars.</em>
-              </>
-            }
-            text="Faith stays first, family stays close, and ministry finds its healthy place behind both."
-          />
-          <ol className="mt-12 grid gap-4 lg:grid-cols-3">
+          <div className="space-y-4">
             {pillars.map((p, i) => (
-              <Reveal as="li" key={p.number} delay={i * 80} className={`flex flex-col rounded-card p-7 ${i === 1 ? "bg-white" : "bg-sand"}`}>
-                <div className="flex items-center justify-between">
-                  <p className="font-heading text-4xl font-medium text-ink/30 lining-nums">{p.number}</p>
-                  <PixelArt seed={i + 30} count={12} className="h-12 w-24" />
+              <Reveal
+                key={p.number}
+                as="article"
+                delay={i * 60}
+                className={`rounded-card p-7 sm:p-10 ${i % 2 === 0 ? "bg-white" : "bg-sand"}`}
+              >
+                <div className="grid gap-8 lg:grid-cols-[1fr_1.4fr] lg:gap-16">
+                  <div>
+                    <Eyebrow>{p.number}</Eyebrow>
+                    <h2 className="mt-4 text-3xl sm:text-4xl">{p.name}</h2>
+                    <PixelArt seed={i + 50} className="mt-8 h-20 w-40" />
+                  </div>
+                  <div>
+                    <p className="font-serif text-2xl italic leading-snug text-ink sm:text-3xl">{p.question}</p>
+                    <div className="mt-6 space-y-4 text-sm leading-relaxed text-stone sm:text-base">
+                      {p.body.map((b) => (
+                        <p key={b}>{b}</p>
+                      ))}
+                    </div>
+                  </div>
                 </div>
-                <h3 className="mt-8 text-2xl font-medium">{p.name}</h3>
-                <p className="mt-1 text-sm font-medium text-bronze-deep">{p.title}</p>
-                <p className="mt-4 text-sm leading-relaxed text-stone">{p.text}</p>
-                <ul className="mt-6 space-y-2 border-t border-line pt-5">
-                  {p.points.map((pt) => (
-                    <li key={pt} className="flex items-start gap-2.5 text-sm text-ink">
-                      <span aria-hidden="true" className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-bronze" />
-                      {pt}
-                    </li>
-                  ))}
-                </ul>
               </Reveal>
             ))}
-          </ol>
+          </div>
+        </Container>
+      </section>
+
+      <section aria-labelledby="order-heading" className="py-16 sm:py-24">
+        <Container>
+          <Reveal className="on-dark rounded-card bg-ink px-6 py-14 text-center text-white sm:px-10 sm:py-20">
+            <Eyebrow className="text-bronze">The Six33 order</Eyebrow>
+            <h2 id="order-heading" className="mt-5 text-3xl sm:text-5xl">
+              Faith <span className="text-bronze">&rarr;</span> Family <span className="text-bronze">&rarr;</span>{" "}
+              Ministry
+            </h2>
+            <p className="mx-auto mt-6 max-w-2xl text-sm leading-relaxed text-white/80 sm:text-base">
+              When these are properly ordered, ministry tends to get healthier, more sustainable, and more fruitful.
+              When they are out of order, the ministry can still look fine from the outside for years.
+            </p>
+            <p className="mx-auto mt-10 max-w-3xl font-serif text-2xl italic leading-snug sm:text-3xl">
+              &ldquo;What would change if my ministry were built around the right priorities instead of just trying
+              to keep everything running?&rdquo;
+            </p>
+            <p className="mx-auto mt-6 max-w-xl text-sm text-white/70">
+              That is the question we help leaders answer, and then turn into practical leadership, systems, and
+              rhythms that actually work.
+            </p>
+          </Reveal>
+        </Container>
+      </section>
+
+      <section aria-labelledby="outcomes-heading" className="py-16 sm:py-24">
+        <Container>
+          <SectionHead
+            id="outcomes-heading"
+            eyebrow="What it looks like in practice"
+            title={
+              <>
+                A framework is only useful
+                <br />
+                <em>if it builds something.</em>
+              </>
+            }
+            text="The order above decides what we work on. These five are what we are actually building toward in every engagement."
+          />
+          <ul className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
+            {solution.map((item, i) => (
+              <Reveal as="li" key={item.title} delay={i * 70} className="rounded-card bg-white p-6">
+                <p className="font-heading text-3xl font-medium text-ink/30 lining-nums">0{i + 1}.</p>
+                <h3 className="mt-6 text-xl font-medium text-ink">{item.title}</h3>
+                <p className="mt-2 text-sm leading-relaxed text-stone">{item.text}</p>
+              </Reveal>
+            ))}
+          </ul>
         </Container>
       </section>
 

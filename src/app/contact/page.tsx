@@ -12,25 +12,25 @@ import { site } from "@/lib/site";
 export const metadata: Metadata = {
   title: "Contact",
   description:
-    "Book a free call or send a message to Six33 Consulting. We would love to hear about your ministry and where you are today.",
+    "Book a consultation or send a message to Six33 Consulting. Tell us what you are carrying and where it is breaking down.",
   alternates: { canonical: "/contact" },
   openGraph: { title: `Contact | ${site.name}`, url: "/contact" },
 };
 
 const cards = [
   {
-    title: "Email us directly",
-    text: "For questions, workshop requests, or anything you would rather not put in a form. Goes to John, not a queue.",
+    title: "Email directly",
+    text: "For questions, scoping a church project, or anything you would rather not put in a form. Goes to John, not a queue.",
     link: { label: site.email, href: `mailto:${site.email}` },
   },
   {
-    title: "Book a free call",
-    text: "Thirty minutes to talk about where you are, what your home is feeling, and what would actually help.",
+    title: "Book a consultation",
+    text: "Bring the problem that is most stuck. We will start with an intro conversation about what you are dealing with and what would actually help.",
     link: { label: "Pick a time below", href: "#book" },
   },
   {
     title: "Tampa Bay, Florida",
-    text: "Every session is virtual. Staff and team workshops can be in person, with travel quoted separately.",
+    text: "Sessions are virtual unless noted. Team and staff sessions can be in person, with travel quoted separately.",
   },
 ];
 
@@ -51,12 +51,12 @@ export default function ContactPage() {
         eyebrow="Contact"
         title={
           <>
-            <em>Let&rsquo;s talk</em>
+            Tell us what
             <br />
-            about what comes first.
+            <em>you are carrying.</em>
           </>
         }
-        text="Book a free call, ask a question, or tell us what your week actually looks like. A real person responds, usually within a day."
+        text="Book a consultation, ask a question, or describe what your week actually looks like. A real person responds, usually within a day."
       />
 
       <section aria-label="Contact options" className="py-8">
@@ -90,14 +90,14 @@ export default function ContactPage() {
         <Container>
           <div className="grid gap-8 lg:grid-cols-[1fr_1.5fr] lg:gap-16">
             <Reveal>
-              <p className="text-xs font-semibold uppercase tracking-[0.12em] text-bronze-deep">Book a call</p>
+              <p className="text-xs font-semibold uppercase tracking-[0.12em] text-bronze-deep">Book a consultation</p>
               <h2 id="book-heading" className="mt-4 text-3xl sm:text-4xl">
                 Pick a time <em>that works for you.</em>
               </h2>
               <p className="mt-5 max-w-md text-sm leading-relaxed text-stone sm:text-base">
-                We will spend about thirty minutes getting to know your ministry, your family season, and what a
-                healthy pace could look like. If one of our services is a good fit, we will talk through it then,
-                including the investment.
+                We will start by getting clear on your ministry, your team, and the thing that keeps breaking
+                down. If one of the Six33 options is a good fit, we will walk through exactly what it would
+                involve, including the investment. If it is not a fit, we will say so.
               </p>
             </Reveal>
             <Reveal delay={100}>

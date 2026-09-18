@@ -4,47 +4,13 @@ import { useId, useState } from "react";
 import Container from "./Container";
 import SectionHead from "./SectionHead";
 import Reveal from "./Reveal";
+import { resetWeeks } from "@/lib/services";
 
-export const steps = [
-  {
-    name: "Assess",
-    text: "An honest look at where faith, family, and ministry actually sit right now, not where you wish they did.",
-  },
-  {
-    name: "Align",
-    text: "Name your priorities, in order, and decide what has to change for your week to reflect them.",
-  },
-  {
-    name: "Build",
-    text: "Rhythms, boundaries, and a shared load that put first things first and keep them there.",
-  },
-  {
-    name: "Sustain",
-    text: "A plan for busy seasons so the new order holds when Easter, Christmas, and everything else arrives.",
-  },
-];
-
-const week = [
-  { day: "Mon", blocks: ["faith", "ministry", "family"] },
-  { day: "Tue", blocks: ["faith", "ministry", "family"] },
-  { day: "Wed", blocks: ["faith", "ministry", "ministry"] },
-  { day: "Thu", blocks: ["faith", "ministry", "family"] },
-  { day: "Fri", blocks: ["faith", "rest", "family"] },
-  { day: "Sat", blocks: ["faith", "family", "family"] },
-  { day: "Sun", blocks: ["faith", "ministry", "rest"] },
-];
-
-const blockStyle: Record<string, string> = {
-  faith: "bg-bronze/80",
-  family: "bg-bronze/35",
-  ministry: "bg-ink/70",
-  rest: "bg-line",
-};
-
-/** Vertical tab list beside an "ideal week" mock, like the template's delegation section. */
+/** Vertical tab list beside a panel showing what comes out of each week. */
 export default function StepsTabs() {
   const [active, setActive] = useState(0);
   const baseId = useId();
+  const current = resetWeeks[active];
 
   return (
     <section aria-labelledby="steps-heading" className="py-16 sm:py-24">
@@ -54,17 +20,17 @@ export default function StepsTabs() {
           eyebrow="How it works"
           title={
             <>
-              Tell us where you are.
+              Find the bottleneck.
               <br />
-              <em>We build the rhythm.</em>
+              <em>Build the system.</em>
             </>
           }
-          text="Whether we meet once or over several months, the path is the same. Four steps, always in the same order, always ending with a week you can actually live."
+          text="Whether we meet once or work together for months, the path is the same. Four moves, always in the same order, always ending with something built rather than something discussed."
         />
 
         <div className="mt-12 grid gap-10 lg:grid-cols-[1fr_1.4fr] lg:gap-16">
           <div role="tablist" aria-label="The four steps" className="flex flex-col">
-            {steps.map((step, i) => {
+            {resetWeeks.map((step, i) => {
               const isActive = i === active;
               return (
                 <button
@@ -97,33 +63,36 @@ export default function StepsTabs() {
           </div>
 
           <Reveal className="rounded-card bg-sand p-3 sm:p-5">
-            <div className="rounded-xl bg-white p-5 sm:p-7">
-              <div className="flex items-center justify-between">
+            <div className="rounded-xl bg-white p-5 sm:p-8">
+              <div className="flex items-center justify-between gap-4">
                 <div>
-                  <p className="text-xs font-semibold uppercase tracking-wider text-stone">Your ideal week</p>
-                  <p className="mt-1 text-lg font-medium text-ink">Step {active + 1}: {steps[active].name}</p>
+                  <p className="text-xs font-semibold uppercase tracking-wider text-stone">{current.week}</p>
+                  <p className="mt-1 text-2xl font-medium text-ink">{current.name}</p>
                 </div>
-                <ul className="hidden gap-3 text-[11px] text-stone sm:flex">
-                  {["faith", "family", "ministry", "rest"].map((k) => (
-                    <li key={k} className="flex items-center gap-1.5">
-                      <span aria-hidden="true" className={`h-2.5 w-2.5 rounded-sm ${blockStyle[k]}`} />
-                      {k}
-                    </li>
+                <ol className="flex gap-1.5" aria-hidden="true">
+                  {resetWeeks.map((w, i) => (
+                    <li key={w.name} className={`h-2 w-8 rounded-sm ${i <= active ? "bg-bronze" : "bg-line"}`} />
                   ))}
-                </ul>
+                </ol>
               </div>
-              <div className="mt-6 grid grid-cols-7 gap-2">
-                {week.map((d) => (
-                  <div key={d.day} className="flex flex-col gap-2">
-                    <p className="text-center text-[11px] font-medium text-stone">{d.day}</p>
-                    {d.blocks.map((b, j) => (
-                      <div key={j} className={`h-10 rounded-md sm:h-14 ${blockStyle[b]}`} />
-                    ))}
-                  </div>
+
+              <p className="mt-6 text-sm leading-relaxed text-stone">{current.text}</p>
+
+              <p className="mt-8 text-xs font-semibold uppercase tracking-[0.12em] text-bronze-deep">
+                What you walk away with
+              </p>
+              <ul className="mt-4 space-y-3">
+                {current.deliverables.map((d) => (
+                  <li key={d} className="flex items-start gap-3 rounded-lg bg-sand/70 px-4 py-3 text-sm text-ink">
+                    <span aria-hidden="true" className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-bronze" />
+                    {d}
+                  </li>
                 ))}
-              </div>
-              <p className="mt-5 text-xs text-stone">
-                Illustrative. Your week will look like your life, not a template.
+              </ul>
+
+              <p className="mt-6 text-xs text-stone">
+                This is the shape of the Six33 Ministry Reset. Single consultations follow the same thinking in one
+                session.
               </p>
             </div>
           </Reveal>

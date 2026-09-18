@@ -2,8 +2,12 @@ import Image from "next/image";
 import Container from "./Container";
 import Reveal from "./Reveal";
 import { LinkButton } from "./Button";
+import { heroHeadlines } from "@/lib/site";
 
-const audiences = ["Worship Pastors", "Lead Pastors", "Associate Pastors", "Student Leaders", "Church Staff"];
+const audiences = ["Worship Leaders", "Lead Pastors", "Ministry Directors", "Production Leaders", "Church Staff"];
+
+// Swap this index to use one of the other headline options in src/lib/site.ts.
+const headline = heroHeadlines[0];
 
 export default function Hero() {
   return (
@@ -11,20 +15,30 @@ export default function Hero() {
       <Container>
         <Reveal className="on-dark relative overflow-hidden rounded-card bg-ink text-white">
           <Image src="/images/hero.svg" alt="" width={1600} height={900} priority className="h-[80vh] min-h-[560px] w-full object-cover lg:h-[78vh]" />
-          <div aria-hidden="true" className="absolute inset-0 bg-ink/25" />
+          <div aria-hidden="true" className="absolute inset-0 bg-ink/30" />
           <div className="absolute inset-0 flex flex-col items-center justify-center px-6 text-center">
-            <h1 id="hero-heading" className="max-w-4xl text-[2.6rem] leading-[1.05] sm:text-6xl lg:text-7xl">
-              Seek first.
-              <br className="sm:hidden" /> Lead well.
-              <br />
-              <em className="text-white/85">Build what lasts.</em>
-            </h1>
-            <p className="mt-6 max-w-xl text-sm leading-relaxed text-white/85 sm:text-base">
-              Faith-based leadership and life consulting for ministry pastors and worship pastors. Put faith
-              first, family second, and ministry third, so you can serve for the long haul.
+            <p className="mb-5 text-xs font-semibold uppercase tracking-[0.18em] text-bronze">
+              Faith First. Family Second. Ministry Third.
             </p>
-            <div className="mt-8">
-              <LinkButton href="/contact#book">Book a Free Call</LinkButton>
+            <h1 id="hero-heading" className="max-w-4xl text-[2.6rem] leading-[1.05] sm:text-6xl lg:text-7xl">
+              {headline.lines[0]}
+              <br />
+              <em className="text-white/85">{headline.lines[1]}</em>
+            </h1>
+            <p className="mt-6 max-w-2xl font-heading text-base font-medium text-white sm:text-lg">
+              {headline.sub}
+            </p>
+            <p className="mt-4 max-w-xl text-sm leading-relaxed text-white/80">
+              Consulting for church and ministry leaders, so the ministry stops running on one person holding
+              everything together.
+            </p>
+            <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
+              <LinkButton href="/contact#book" variant="light">
+                Book a Consultation
+              </LinkButton>
+              <LinkButton href="/services" variant="ghost">
+                Explore Services
+              </LinkButton>
             </div>
           </div>
         </Reveal>

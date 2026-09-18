@@ -31,11 +31,11 @@ export default function OpenGraphImage() {
           six<span style={{ color: "#FFD9A8" }}>33</span>
           <span style={{ fontSize: 28, fontWeight: 500, marginLeft: 12, opacity: 0.8 }}>consulting</span>
         </div>
-        <div style={{ display: "flex", fontSize: 72, fontWeight: 500, letterSpacing: -2, marginTop: 24, lineHeight: 1.05 }}>
-          {site.tagline}
+        <div style={{ display: "flex", fontSize: 68, fontWeight: 500, letterSpacing: -2, marginTop: 24, lineHeight: 1.05 }}>
+          Bring your ministry back into order.
         </div>
         <div style={{ display: "flex", fontSize: 26, marginTop: 24, opacity: 0.85 }}>
-          Faith first. Family second. Ministry third.
+          {site.tagline}
         </div>
       </div>
     ),

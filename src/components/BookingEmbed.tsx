@@ -13,7 +13,7 @@ export default function BookingEmbed() {
 
   return (
     <div className="overflow-hidden rounded-card bg-white">
-      <iframe src={src} title="Book a free call" loading="lazy" className="h-[720px] w-full" allow="payment" />
+      <iframe src={src} title="Book a consultation" loading="lazy" className="h-[720px] w-full" allow="payment" />
       <p className="border-t border-line px-5 py-3 text-xs text-stone">
         Calendar not loading?{" "}
         <a href={url} target="_blank" rel="noopener noreferrer" className="font-medium text-bronze-deep underline-offset-4 hover:underline">
