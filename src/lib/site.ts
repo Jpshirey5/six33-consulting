@@ -8,10 +8,11 @@ export const site = {
   url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.six33consulting.com",
   // Placeholder. Swap for the real address when the domain is set up.
   email: "john@[yourdomain].com",
-  // PLACEHOLDER Calendly link for the free discovery call.
-  // Replace with your real event URL, or set NEXT_PUBLIC_BOOKING_URL.
-  // The Calendly event itself must ask for Name, Email, Church, and Role.
-  bookingUrl: process.env.NEXT_PUBLIC_BOOKING_URL ?? "https://calendly.com/six33consulting/discovery-call",
+  // Every "Book a discovery call" button points here, not straight at Calendly.
+  // /book takes their details into HubSpot first, then hands off to the calendar.
+  bookingPath: "/book",
+  // The live Calendly event, used by the scheduler on the second step of /book.
+  bookingUrl: process.env.NEXT_PUBLIC_BOOKING_URL ?? "https://calendly.com/six33consulting/30min",
   founder: {
     name: "John Shirey",
     title: "Founder",
@@ -51,11 +52,10 @@ export const heroHeadlines = [
 ] as const;
 
 export const navLinks = [
+  { href: "/about", label: "About" },
   { href: "/services", label: "Services" },
   { href: "/framework", label: "Framework" },
   { href: "/who-we-serve", label: "Who We Serve" },
-  { href: "/about", label: "About" },
-  { href: "/contact", label: "Contact" },
 ] as const;
 
 export const faqs = [

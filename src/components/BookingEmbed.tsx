@@ -1,26 +1,12 @@
-import { site } from "@/lib/site";
+import { calendlySrc, type BookingPrefill } from "@/lib/booking";
 
 /**
- * Calendly inline embed for the free discovery call.
- *
- * The event in Calendly must be configured to ask for:
- *   Name   (Calendly built-in)
- *   Email  (Calendly built-in)
- *   Church (custom question 1)
- *   Role   (custom question 2)
- *
- * Those four answers are what the booking needs to capture. Connecting the
- * booking to a CRM is done inside Calendly's own integrations, not here.
+ * Calendly inline embed for the free discovery call. This is step two of the
+ * booking flow — the HubSpot form in BookingFlow runs first and passes the
+ * name and email it collected, so the calendar opens already filled in.
  */
-export default function BookingEmbed() {
-  const url = site.bookingUrl;
-  const params = new URLSearchParams({
-    hide_gdpr_banner: "1",
-    background_color: "ffffff",
-    text_color: "251f19",
-    primary_color: "f48d16",
-  });
-  const src = `${url}${url.includes("?") ? "&" : "?"}${params.toString()}`;
+export default function BookingEmbed({ prefill }: { prefill?: BookingPrefill }) {
+  const src = calendlySrc(prefill);
 
   return (
     <div className="overflow-hidden rounded-card bg-white">
@@ -28,7 +14,7 @@ export default function BookingEmbed() {
       <p className="border-t border-line px-5 py-3 text-xs text-stone">
         Calendar not loading?{" "}
         <a
-          href={url}
+          href={src}
           target="_blank"
           rel="noopener noreferrer"
           className="font-medium text-bronze-deep underline-offset-4 hover:underline"

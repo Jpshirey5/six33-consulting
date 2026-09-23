@@ -68,7 +68,7 @@ export default function PacketPage() {
             </blockquote>
 
             <div className="mt-8 flex flex-wrap items-center gap-3">
-              <LinkButton href={site.bookingUrl} target="_blank" rel="noopener noreferrer" className="no-print">
+              <LinkButton href={site.bookingPath} className="no-print">
                 Book a discovery call
               </LinkButton>
               <PrintButton />

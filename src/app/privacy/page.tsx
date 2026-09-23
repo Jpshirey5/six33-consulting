@@ -13,11 +13,11 @@ export const metadata: Metadata = {
 const sections = [
   {
     title: "What we collect",
-    text: "When you fill out the contact form or book a call, we collect the information you provide, such as your name, email address, church, role, and message. We use it only to respond to you and to prepare for our conversation.",
+    text: "When you book a discovery call, we collect the information you provide, such as your name, email address, church, role, and what you are working through. We use it only to respond to you and to prepare for our conversation.",
   },
   {
     title: "How we use it",
-    text: "We do not sell or rent your information. We do not add you to a mailing list without asking. Your contact form submission is delivered to us by email through a third-party email service, and bookings are handled by our scheduling provider under their own privacy policies.",
+    text: "We do not sell or rent your information. We do not add you to a mailing list without asking. What you submit is stored by our customer relationship provider, and bookings are handled by our scheduling provider, each under their own privacy policies.",
   },
   {
     title: "Cookies and analytics",

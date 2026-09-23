@@ -1,2 +1,3 @@
 # Copy to .dev.vars for `npm run preview` (local Cloudflare Workers runtime).
-RESEND_API_KEY=re_xxxxxxxxxxxxxxxxxxxxxxxx
+# No server-side secrets are needed right now: the booking form posts straight
+# to HubSpot, and the scheduler is a Calendly embed.

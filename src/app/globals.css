@@ -150,6 +150,37 @@ h3 em,
   box-shadow: none;
 }
 
+/* Opt-out for a card that should stay light inside a dark section, so it reads
+   as a panel sitting on the ink rather than dissolving into it.
+
+   Used INSTEAD of bg-white, never alongside it: that keeps the card out of the
+   dark-card rule above entirely. The .on-ink rules still reach its descendants
+   though, so every colour they remap has to be restored here. */
+.card-light {
+  background-color: #ffffff;
+  color: var(--color-ink);
+}
+
+.on-ink .card-light :is(h1, h2, h3, h4, strong) {
+  color: var(--color-ink);
+}
+
+.on-ink .card-light :is(p, li, dd, figcaption) {
+  color: var(--color-ink);
+}
+
+.on-ink .card-light :is(h1, h2, h3) em {
+  color: var(--color-stone);
+}
+
+.on-ink .card-light .text-stone {
+  color: var(--color-stone);
+}
+
+.on-ink .card-light .eyebrow {
+  color: var(--color-bronze-deep);
+}
+
 .on-ink hr,
 .on-ink .border-line {
   border-color: rgba(255, 255, 255, 0.16);

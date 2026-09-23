@@ -54,9 +54,7 @@ export default function Header() {
               ))}
             </ul>
           </nav>
-          <LinkButton href={site.bookingUrl} target="_blank" rel="noopener noreferrer">
-            {bookingLabel}
-          </LinkButton>
+          <LinkButton href={site.bookingPath}>{bookingLabel}</LinkButton>
         </div>
 
         <button
@@ -100,9 +98,7 @@ export default function Header() {
           ))}
           <li className="pb-3 pt-3">
             <LinkButton
-              href={site.bookingUrl}
-              target="_blank"
-              rel="noopener noreferrer"
+              href={site.bookingPath}
               className="w-full justify-start"
               onClick={() => setOpen(false)}
             >

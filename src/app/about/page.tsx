@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import PageIntro from "@/components/PageIntro";
 import Container from "@/components/Container";
+import Section from "@/components/Section";
 import Reveal from "@/components/Reveal";
 import SectionHead from "@/components/SectionHead";
 import PixelArt from "@/components/PixelArt";
@@ -19,7 +20,7 @@ export const metadata: Metadata = {
 };
 
 const stats = [
-  { value: "20+", label: "Years serving in local church ministry" },
+  { value: "15+", label: "Years serving in local church ministry" },
   { value: "3", label: "States where John has led worship" },
   { value: "10", label: "Years married to Julia" },
   { value: "5", label: "Kids at the table every night" },
@@ -59,57 +60,57 @@ export default function AboutPage() {
         text="Most people who understand church ministry do not think in systems. Most people who think in systems have never run a Sunday. Six33 exists in the overlap."
       />
 
-      <section aria-labelledby="founder-heading" className="py-8">
-        <Container>
-          <div className="grid gap-6 lg:grid-cols-[1fr_1.2fr] lg:gap-10">
-            <Reveal className="overflow-hidden rounded-card bg-sand">
-              <Image
-                src="/images/john-shirey.jpg"
-                alt="John Shirey, founder of Six33 Consulting"
-                width={800}
-                height={1000}
-                priority
-                className="h-[420px] w-full object-cover lg:h-full"
-              />
-            </Reveal>
-            <Reveal delay={100} className="rounded-card bg-white p-7 sm:p-10">
-              <Eyebrow>
-                {site.founder.name}, {site.founder.title}
-              </Eyebrow>
-              <h2 id="founder-heading" className="mt-4 text-3xl sm:text-4xl">
-                Serving in ministry <em>since fourteen.</em>
-              </h2>
-              <div className="mt-6 space-y-4 text-sm leading-relaxed text-ink sm:text-base">
-                <p>
-                  John Shirey has served in ministry since he was fourteen, leading worship in churches across
-                  Florida, Virginia, and New York, and he continues to serve in local church ministry today. He has
-                  been married to his wife, Julia, for ten years, and together they are raising five children.
-                </p>
-                <p>
-                  He also spends his working life in technology. Years in sales engineering and business systems
-                  taught him how to walk into a complicated operation, find where the work is actually getting
-                  stuck, and rebuild it into something people can run without heroics. He is the founder of Sermon
-                  Slide Pro, a tool that helps pastors and church teams turn sermons into presentation slides in a
-                  fraction of the time.
-                </p>
-                <p>
-                  Those two worlds usually stay separate. Six33 Consulting is what happens when they do not. He
-                  lives in the Tampa Bay area of Florida.
-                </p>
-              </div>
-            </Reveal>
-          </div>
+      {/* Dark band, so the page alternates light and dark the way the home page does. */}
+      <Section background="ink" labelledBy="founder-heading">
+        <div className="grid gap-6 lg:grid-cols-[1fr_1.2fr] lg:gap-10">
+          {/* `fill` on purpose: with intrinsic width/height this very tall
+              portrait (1038x1600) sets the row height itself, forcing the bio
+              card to stretch past its text and leaving a block of dead space
+              under it. Filling an absolutely positioned box means the card's
+              content decides the height and the photo matches it. */}
+          <Reveal className="relative h-[420px] overflow-hidden rounded-card bg-sand lg:h-auto">
+            <Image
+              src="/images/john-shirey.jpg"
+              alt="John Shirey, founder of Six33 Consulting"
+              fill
+              priority
+              sizes="(min-width: 1024px) 45vw, 100vw"
+              className="object-cover"
+            />
+          </Reveal>
+          <Reveal delay={100} className="rounded-card card-light p-7 sm:p-10">
+            <Eyebrow>Our founder</Eyebrow>
+            <h2 id="founder-heading" className="mt-4 text-3xl sm:text-4xl">
+              {site.founder.name}
+            </h2>
+            <div className="mt-6 space-y-5 text-base leading-relaxed sm:text-lg">
+              <p>
+                John is a worship leader and ministry consultant with a heart for pastors and the families
+                standing behind them. Called to ministry at age fourteen, he brings over 15 years of ministry
+                experience, leading worship in churches across Florida, Virginia, and New York. He continues to
+                serve in local church ministry today, helping leaders keep faith, family, and ministry in the
+                right order.
+              </p>
+              <p>
+                John&rsquo;s passion for helping leaders find balance comes from living it. As a husband, a dad,
+                and the founder of Sermon Slide Pro, he knows firsthand how ministry, family, and work compete for
+                the same hours. Through consulting, the Six33 Framework, and practical rhythms, he helps ministry
+                leaders deepen their walk with God, stay present at home, and serve for the long haul. He lives in
+                the Tampa Bay area with his wife of ten years, Julia, and their five children.
+              </p>
+            </div>
+          </Reveal>
+        </div>
 
-          <ul className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-            {stats.map((s, i) => (
-              <Reveal as="li" key={s.label} delay={i * 80} className="rounded-card bg-sand p-6">
-                <p className="font-heading text-5xl font-medium text-ink lining-nums">{s.value}</p>
-                <p className="mt-3 text-sm text-stone">{s.label}</p>
-              </Reveal>
-            ))}
-          </ul>
-        </Container>
-      </section>
+        <ul className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          {stats.map((s, i) => (
+            <Reveal as="li" key={s.label} delay={i * 80} className="rounded-card bg-sand p-6">
+              <p className="font-heading text-5xl font-medium text-ink lining-nums">{s.value}</p>
+              <p className="mt-3 text-sm text-stone">{s.label}</p>
+            </Reveal>
+          ))}
+        </ul>
+      </Section>
 
       <section aria-labelledby="disciplines-heading" className="py-16 sm:py-24">
         <Container>

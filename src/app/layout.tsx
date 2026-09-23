@@ -4,6 +4,7 @@ import { Cormorant_Garamond, Montserrat } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import BackToTop from "@/components/BackToTop";
 import { site } from "@/lib/site";
 
 const cormorant = Cormorant_Garamond({
@@ -63,6 +64,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
           {children}
         </main>
         <Footer />
+        <BackToTop />
       </body>
     </html>
   );
