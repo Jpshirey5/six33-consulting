@@ -25,7 +25,7 @@ export default function BookPage() {
             <em>what you are carrying.</em>
           </>
         }
-        text="No pitch, no pressure. Just a real conversation about your ministry and where it is straining."
+        text="No pitch, no pressure. Just a real conversation about your ministry and where it is straining. Tell us about yourself and why you want to partner with us. We look forward to connecting with you."
       />
 
       <section className="pb-20 sm:pb-28" aria-labelledby="book-heading">

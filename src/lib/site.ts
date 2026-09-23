@@ -6,8 +6,7 @@ export const site = {
   description:
     "Ministry and leadership consulting for church leaders. We help you bring your leadership, your teams, and your systems into order, so the ministry runs on more than one person holding everything together.",
   url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.six33consulting.com",
-  // Placeholder. Swap for the real address when the domain is set up.
-  email: "john@[yourdomain].com",
+  email: "john@six33consulting.com",
   // Every "Book a discovery call" button points here, not straight at Calendly.
   // /book takes their details into HubSpot first, then hands off to the calendar.
   bookingPath: "/book",
