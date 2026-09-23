@@ -8,21 +8,17 @@ import { faqs } from "@/lib/site";
 export default function Faq({ background = "cream" }: { background?: Background }) {
   return (
     <Section background={background} labelledBy="faq-heading">
-      <div className="grid gap-10 lg:grid-cols-[1fr_1.4fr] lg:gap-16">
-        <Reveal className="order-2 lg:order-1">
+      {/* Mobile stacks heading, list, then CTA; on lg the heading and CTA share the left column. */}
+      <div className="grid gap-10 lg:grid-cols-[1fr_1.4fr] lg:grid-rows-[auto_1fr] lg:gap-x-16 lg:gap-y-0">
+        <Reveal className="lg:col-start-1 lg:row-start-1">
           <Eyebrow>FAQ</Eyebrow>
           <h2 id="faq-heading" className="mt-4 text-4xl sm:text-5xl">
             Questions
             <br />
             answered.
           </h2>
-          <p className="mt-6 text-sm text-stone">Still curious?</p>
-          <div className="mt-3">
-            <BookingCta align="left" />
-          </div>
-          <PixelArt seed={11} count={26} className="mt-12 h-28 w-56" />
         </Reveal>
-        <Reveal delay={100} className="order-1 lg:order-2">
+        <Reveal delay={100} className="lg:col-start-2 lg:row-span-2 lg:row-start-1">
           <ul className="space-y-3">
             {faqs.map((f) => (
               <li key={f.q}>
@@ -40,6 +36,13 @@ export default function Faq({ background = "cream" }: { background?: Background 
               </li>
             ))}
           </ul>
+        </Reveal>
+        <Reveal className="lg:col-start-1 lg:row-start-2 lg:mt-6">
+          <p className="text-sm text-stone">Still curious?</p>
+          <div className="mt-3">
+            <BookingCta align="left" />
+          </div>
+          <PixelArt seed={11} count={26} className="mt-12 h-28 w-56" />
         </Reveal>
       </div>
     </Section>
