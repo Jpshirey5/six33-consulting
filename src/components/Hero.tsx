@@ -13,9 +13,9 @@ export default function Hero() {
     <section aria-labelledby="hero-heading" className="pt-2">
       <Container>
         <Reveal className="on-dark relative overflow-hidden rounded-card bg-ink text-white">
-          <Image src="/images/hero.svg" alt="" width={1600} height={900} priority className="h-[80vh] min-h-[560px] w-full object-cover lg:h-[78vh]" />
+          <Image src="/images/hero.svg" alt="" width={1600} height={900} priority className="absolute inset-0 h-full w-full object-cover lg:static lg:h-[78dvh] lg:min-h-[560px]" />
           <div aria-hidden="true" className="absolute inset-0 bg-ink/30" />
-          <div className="absolute inset-0 flex flex-col items-center justify-center px-6 text-center">
+          <div className="relative flex min-h-[max(80dvh,640px)] flex-col items-center justify-center px-6 py-12 text-center lg:absolute lg:inset-0 lg:min-h-0">
             <p className="mb-5 text-xs font-semibold uppercase tracking-[0.18em] text-bronze">
               Faith First. Family Second. Ministry Third.
             </p>

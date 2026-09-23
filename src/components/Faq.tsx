@@ -9,7 +9,7 @@ export default function Faq({ background = "cream" }: { background?: Background 
   return (
     <Section background={background} labelledBy="faq-heading">
       <div className="grid gap-10 lg:grid-cols-[1fr_1.4fr] lg:gap-16">
-        <Reveal>
+        <Reveal className="order-2 lg:order-1">
           <Eyebrow>FAQ</Eyebrow>
           <h2 id="faq-heading" className="mt-4 text-4xl sm:text-5xl">
             Questions
@@ -22,7 +22,7 @@ export default function Faq({ background = "cream" }: { background?: Background 
           </div>
           <PixelArt seed={11} count={26} className="mt-12 h-28 w-56" />
         </Reveal>
-        <Reveal delay={100}>
+        <Reveal delay={100} className="order-1 lg:order-2">
           <ul className="space-y-3">
             {faqs.map((f) => (
               <li key={f.q}>
