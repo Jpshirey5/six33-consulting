@@ -3,7 +3,6 @@ import PageIntro from "@/components/PageIntro";
 import Container from "@/components/Container";
 import Reveal from "@/components/Reveal";
 import PixelArt from "@/components/PixelArt";
-import AudienceTabs from "@/components/AudienceTabs";
 import FinalCta from "@/components/FinalCta";
 import { Eyebrow } from "@/components/Button";
 import BookingCta from "@/components/BookingCta";
@@ -77,7 +76,6 @@ export default function WhoWeServePage() {
         </Container>
       </section>
 
-      <AudienceTabs />
       <FinalCta />
     </>
   );

@@ -10,6 +10,8 @@ type BookingCtaProps = {
   /** Extra links rendered beside the primary button. */
   children?: React.ReactNode;
   tone?: "dark" | "light";
+  /** The explainer line. On by default only where the CTA is the page's main one. */
+  subline?: boolean;
 };
 
 /**
@@ -24,9 +26,10 @@ export default function BookingCta({
   className = "",
   children,
   tone = "dark",
+  subline = false,
 }: BookingCtaProps) {
   const alignment = align === "center" ? "items-center text-center" : "items-start text-left";
-  const subline = tone === "light" ? "text-white/75" : "text-stone";
+  const sublineColor = tone === "light" ? "text-white/75" : "text-stone";
 
   return (
     <div className={`flex flex-col ${alignment} ${className}`}>
@@ -36,7 +39,9 @@ export default function BookingCta({
         </LinkButton>
         {children}
       </div>
-      <p className={`mt-4 max-w-md text-sm leading-relaxed ${subline}`}>{bookingSubline}</p>
+      {subline && (
+        <p className={`mt-4 max-w-md text-sm leading-relaxed ${sublineColor}`}>{bookingSubline}</p>
+      )}
     </div>
   );
 }

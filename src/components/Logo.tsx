@@ -30,14 +30,14 @@ export function LogoMark({ size, variant = "dark", className = "" }: LogoMarkPro
     >
       <rect x="2" y="2" width="48" height="48" rx="12" fill="none" stroke="currentColor" strokeWidth="4" />
       <path
-        d="M14 33 L26 19 L38 33"
+        d="M14 37.25 L26 23.25 L38 37.25"
         fill="none"
         stroke="currentColor"
         strokeWidth="5"
         strokeLinecap="round"
         strokeLinejoin="round"
       />
-      <rect x="21" y="8" width="10" height="10" rx="2.5" fill="#F48D16" />
+      <rect x="21" y="12.25" width="10" height="10" rx="2.5" fill="#F48D16" />
     </svg>
   );
 }

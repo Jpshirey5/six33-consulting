@@ -23,7 +23,7 @@ export default function Footer() {
               teams. Leadership, production, and systems that do not depend on one person.{" "}{site.tagline}
             </p>
           </div>
-          <div className="grid gap-8 sm:grid-cols-[repeat(3,auto)_1fr] sm:gap-12">
+          <div className="flex flex-wrap gap-8 sm:justify-end sm:gap-14 lg:gap-16">
             {columns.map((col) => (
               <nav key={col.title} aria-label={col.title}>
                 <p className="flex items-center gap-2 text-sm font-semibold text-ink">
@@ -41,18 +41,6 @@ export default function Footer() {
                 </ul>
               </nav>
             ))}
-            <div className="sm:text-right">
-              <p className="text-xs text-stone">Social</p>
-              <ul className="mt-3 flex gap-4 sm:justify-end">
-                {site.social.map((s) => (
-                  <li key={s.label}>
-                    <a href={s.href} target="_blank" rel="noopener noreferrer" className="text-sm text-stone hover:text-ink">
-                      {s.label}
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            </div>
           </div>
         </div>
 

@@ -19,13 +19,6 @@ export const metadata: Metadata = {
   openGraph: { title: `About | ${site.name}`, url: "/about" },
 };
 
-const stats = [
-  { value: "15+", label: "Years serving in local church ministry" },
-  { value: "3", label: "States where John has led worship" },
-  { value: "10", label: "Years married to Julia" },
-  { value: "5", label: "Kids at the table every night" },
-];
-
 const disciplines = [
   {
     title: "Ministry",
@@ -102,14 +95,6 @@ export default function AboutPage() {
           </Reveal>
         </div>
 
-        <ul className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-          {stats.map((s, i) => (
-            <Reveal as="li" key={s.label} delay={i * 80} className="rounded-card bg-sand p-6">
-              <p className="font-heading text-5xl font-medium text-ink lining-nums">{s.value}</p>
-              <p className="mt-3 text-sm text-stone">{s.label}</p>
-            </Reveal>
-          ))}
-        </ul>
       </Section>
 
       <section aria-labelledby="disciplines-heading" className="py-16 sm:py-24">

@@ -31,7 +31,7 @@ export default function Hero() {
               Consulting for church and ministry leaders, so the ministry stops running on one person holding
               everything together.
             </p>
-            <BookingCta variant="light" tone="light" className="mt-8">
+            <BookingCta variant="light" tone="light" subline className="mt-8">
               <LinkButton href="/services" variant="ghost">
                 Explore Services
               </LinkButton>

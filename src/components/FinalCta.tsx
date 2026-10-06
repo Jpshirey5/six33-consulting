@@ -20,7 +20,7 @@ export default function FinalCta({ background = "ink" }: { background?: Backgrou
           Tell us what you are carrying and where it is breaking down. If Six33 is a fit, we will tell you
           exactly what working together would look like. If it is not, we will tell you that too.
         </p>
-        <BookingCta variant="light" tone="light" className="mt-8">
+        <BookingCta variant="light" tone="light" subline className="mt-8">
           <LinkButton href="/services" variant="ghost">
             Explore Services
           </LinkButton>

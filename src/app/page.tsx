@@ -3,13 +3,8 @@ import { Fragment, type ReactNode } from "react";
 import Link from "next/link";
 import Hero from "@/components/Hero";
 import Problem from "@/components/Problem";
-import Solution from "@/components/Solution";
 import CoreAreas from "@/components/CoreAreas";
-import Pillars from "@/components/Pillars";
-import StepsTabs from "@/components/StepsTabs";
 import Testimonials, { SHOW_TESTIMONIALS } from "@/components/Testimonials";
-import AudienceTabs from "@/components/AudienceTabs";
-import Faq from "@/components/Faq";
 import VerseBlock from "@/components/VerseBlock";
 import FinalCta from "@/components/FinalCta";
 import EngagementCard from "@/components/EngagementCard";
@@ -53,14 +48,9 @@ const slots: Slot[] = [
       />
     ),
   },
-  { key: "solution", render: (bg) => <Solution background={bg} /> },
   { key: "core-areas", render: (bg) => <CoreAreas background={bg} /> },
-  { key: "steps", ink: true, render: () => <StepsTabs background="ink" /> },
   { key: "testimonials", show: SHOW_TESTIMONIALS, render: (bg) => <Testimonials background={bg} /> },
   { key: "services", render: (bg) => <ServicesSection background={bg} /> },
-  { key: "pillars", ink: true, render: () => <Pillars background="ink" /> },
-  { key: "audiences", render: (bg) => <AudienceTabs background={bg} /> },
-  { key: "faq", render: (bg) => <Faq background={bg} /> },
   { key: "verse", render: (bg) => <VerseBlock background={bg} /> },
   { key: "final-cta", ink: true, render: () => <FinalCta background="ink" /> },
 ];

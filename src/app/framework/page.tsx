@@ -4,9 +4,7 @@ import Container from "@/components/Container";
 import Reveal from "@/components/Reveal";
 import PixelArt from "@/components/PixelArt";
 import SectionHead from "@/components/SectionHead";
-import StepsTabs from "@/components/StepsTabs";
 import VerseBlock from "@/components/VerseBlock";
-import Faq from "@/components/Faq";
 import FinalCta from "@/components/FinalCta";
 import { Eyebrow } from "@/components/Button";
 import { solution } from "@/lib/services";
@@ -147,8 +145,6 @@ export default function FrameworkPage() {
         </Container>
       </section>
 
-      <StepsTabs />
-      <Faq />
       <FinalCta />
     </>
   );
