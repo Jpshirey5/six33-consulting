@@ -12,6 +12,17 @@ export const hubspotForm = {
   region: process.env.NEXT_PUBLIC_HUBSPOT_REGION ?? "na2",
 } as const;
 
+/**
+ * The HubSpot form behind guest worship leading requests: "Six33 Worship
+ * Leader Request Form" (Marketing > Forms). Fields are managed in HubSpot,
+ * so questions change there, not here.
+ */
+export const worshipForm = {
+  portalId: hubspotForm.portalId,
+  formId: process.env.NEXT_PUBLIC_HUBSPOT_WORSHIP_FORM_ID ?? "1c750788-89b1-444e-918e-b1d1e8d41025",
+  region: hubspotForm.region,
+} as const;
+
 export function hubspotEmbedSrc() {
   return `https://js-${hubspotForm.region}.hsforms.net/forms/embed/${hubspotForm.portalId}.js`;
 }

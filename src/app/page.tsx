@@ -7,6 +7,7 @@ import CoreAreas from "@/components/CoreAreas";
 import Testimonials, { SHOW_TESTIMONIALS } from "@/components/Testimonials";
 import VerseBlock from "@/components/VerseBlock";
 import FinalCta from "@/components/FinalCta";
+import WorshipBand from "@/components/WorshipBand";
 import EngagementCard from "@/components/EngagementCard";
 import SectionHead from "@/components/SectionHead";
 import Section, { type Background } from "@/components/Section";
@@ -52,6 +53,7 @@ const slots: Slot[] = [
   { key: "testimonials", show: SHOW_TESTIMONIALS, render: (bg) => <Testimonials background={bg} /> },
   { key: "services", render: (bg) => <ServicesSection background={bg} /> },
   { key: "verse", render: (bg) => <VerseBlock background={bg} /> },
+  { key: "worship", render: (bg) => <WorshipBand background={bg} /> },
   { key: "final-cta", ink: true, render: () => <FinalCta background="ink" /> },
 ];
 

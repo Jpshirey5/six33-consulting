@@ -6,7 +6,13 @@ import { navLinks, site } from "@/lib/site";
 
 const columns = [
   { title: "Explore", links: [...navLinks] },
-  { title: "Get started", links: [{ href: site.bookingPath, label: "Book a discovery call" }] },
+  {
+    title: "Get started",
+    links: [
+      { href: site.bookingPath, label: "Book a discovery call" },
+      { href: "/worship-leading", label: "Guest worship leading" },
+    ],
+  },
   { title: "Legal", links: [{ href: "/privacy", label: "Privacy policy" }] },
 ];
 
