@@ -15,7 +15,7 @@
   // Cloudflare dashboard or with `npx wrangler secret put RESEND_API_KEY`.
   "vars": {
     "NEXT_PUBLIC_SITE_URL": "https://www.six33consulting.com",
-    "NEXT_PUBLIC_BOOKING_URL": "https://cal.com/your-username/free-call",
+    "NEXT_PUBLIC_BOOKING_URL": "https://calendly.com/six33consulting/30min",
     "CONTACT_TO_EMAIL": "john@example.com",
     "CONTACT_FROM_EMAIL": "Six33 Website <onboarding@resend.dev>"
   }
