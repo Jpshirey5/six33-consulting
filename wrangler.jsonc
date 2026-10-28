@@ -11,12 +11,12 @@
   "observability": {
     "enabled": true
   },
-  // Public (non-secret) variables. Secrets like RESEND_API_KEY are set in the
-  // Cloudflare dashboard or with `npx wrangler secret put RESEND_API_KEY`.
+  // Public (non-secret) variables. There are no server-side secrets: the
+  // booking form posts straight to HubSpot and the scheduler is a Calendly
+  // embed. If that ever changes, add secrets in the Cloudflare dashboard or
+  // with `npx wrangler secret put <NAME>` rather than listing them here.
   "vars": {
     "NEXT_PUBLIC_SITE_URL": "https://www.six33consulting.com",
-    "NEXT_PUBLIC_BOOKING_URL": "https://calendly.com/six33consulting/30min",
-    "CONTACT_TO_EMAIL": "john@example.com",
-    "CONTACT_FROM_EMAIL": "Six33 Website <onboarding@resend.dev>"
+    "NEXT_PUBLIC_BOOKING_URL": "https://calendly.com/six33consulting/30min"
   }
 }

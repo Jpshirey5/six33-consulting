@@ -33,13 +33,10 @@ Other scripts:
 
 | Variable                  | Required | Purpose                                                                                  |
 | ------------------------- | -------- | ---------------------------------------------------------------------------------------- |
-| `RESEND_API_KEY`          | Yes      | Resend API key used by the contact form. Secret. Never commit it.                        |
-| `CONTACT_TO_EMAIL`        | Yes      | Address that receives contact form submissions. Placeholder is `john@example.com`.       |
-| `CONTACT_FROM_EMAIL`      | No       | "From" address. `onboarding@resend.dev` works for testing. Use your verified domain live. |
 | `NEXT_PUBLIC_SITE_URL`    | Yes      | Public site URL. Used by the sitemap, robots.txt, and Open Graph tags.                   |
-| `NEXT_PUBLIC_BOOKING_URL` | Yes      | Cal.com or Calendly event URL for the booking embed on the Contact page.                 |
+| `NEXT_PUBLIC_BOOKING_URL` | Yes      | Calendly event URL for the scheduler, step two of `/book`.                               |
 
-Locally these live in `.env.local` (copy `.env.example`). For `npm run preview`, secrets go in `.dev.vars` (copy `.dev.vars.example`). On Cloudflare, public values live in `wrangler.jsonc` under `vars`, and secrets are set in the dashboard or with `npx wrangler secret put RESEND_API_KEY`.
+Locally these live in `.env.local` (copy `.env.example`). Every value is public, so there are no secrets to manage: the booking form posts straight to HubSpot and the scheduler is a Calendly embed. On Cloudflare, these live in `wrangler.jsonc` under `vars`. If the site ever needs a real secret, set it in the dashboard or with `npx wrangler secret put <NAME>` rather than committing it.
 
 ## Deploy to Cloudflare from GitHub
 
@@ -51,7 +48,7 @@ The site uses the OpenNext Cloudflare adapter (`@opennextjs/cloudflare`) and dep
    - Build command: `npx opennextjs-cloudflare build`
    - Deploy command: `npx opennextjs-cloudflare deploy`
    - Root directory: leave blank if the repo root is this folder, otherwise set it to the folder that contains `package.json`.
-4. Under **Variables and Secrets**, add `RESEND_API_KEY` as a secret. Update the public values in `wrangler.jsonc` (`NEXT_PUBLIC_SITE_URL`, `NEXT_PUBLIC_BOOKING_URL`, `CONTACT_TO_EMAIL`, `CONTACT_FROM_EMAIL`) and commit.
+4. Check the values in `wrangler.jsonc` under `vars` (`NEXT_PUBLIC_SITE_URL` and `NEXT_PUBLIC_BOOKING_URL`) are right for production, and commit. No secrets are needed.
 5. Save and deploy. Every push to the production branch redeploys. Other branches get preview URLs.
 6. Add your custom domain under the Worker's **Settings**, then **Domains & Routes**.
 
@@ -82,9 +79,7 @@ To deploy manually from your machine instead, run `npx wrangler login` once, the
 - [ ] Add `public/images/john-shirey.jpg`
 - [ ] Replace the placeholder images in `public/images`
 - [ ] Update or remove the social links in `src/lib/site.ts`
-- [ ] Set the real email in `src/lib/site.ts` and `CONTACT_TO_EMAIL`
+- [ ] Set the real email in `src/lib/site.ts`
 - [ ] Set the real booking URL in `NEXT_PUBLIC_BOOKING_URL`
-- [ ] Verify your sending domain in Resend and update `CONTACT_FROM_EMAIL`
-- [ ] Finalize the privacy policy wording in `src/app/privacy/page.tsx`
 - [ ] Decide whether the packet at `/packet` should stay unlisted or get a footer link
 - [ ] Set `NEXT_PUBLIC_SITE_URL` to the live domain
